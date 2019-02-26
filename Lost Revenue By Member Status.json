@@ -1,0 +1,256 @@
+﻿{
+  "metadata": {
+    "clusterVersion": "1.165.0.20190225-190547",
+    "configurationVersions": [
+      2
+    ]
+  },
+  "dashboardMetadata": {
+    "name": "💲 Lost Revenue Analysis By Member Status",
+    "shared": true,
+    "sharingDetails": {
+      "linkShared": false,
+      "published": false
+    },
+    "dashboardFilter": {
+      "timeframe": "l_24_HOURS",
+      "managementZone": null
+    }
+  },
+  "tiles": [
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "🥇",
+      "query": "select sum(doubleProperties.revenue) as \"Platinum Lost Revenue\" FROM usersession where useraction.name != \"Finish\" and stringProperties.memberstatus=\"Platinum\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Platinum Lost Revenue"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 342,
+        "width": 1634,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "🥇",
+      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(doubleProperties.revenue) as \"Platinum Lost Revenue\" FROM usersession where useraction.name != \"Finish\" and doubleProperties.revenue>0   and stringProperties.memberstatus=\"Platinum\"",
+      "type": "COLUMN_CHART",
+      "chartConfig": {
+        "xAxis": [
+          "Time"
+        ],
+        "yAxis": [
+          "Platinum Lost Revenue"
+        ]
+      }
+    },
+    {
+      "name": "Platinum Lost Revenue",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Platinum Lost Revenue Over Time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 342,
+        "width": 836,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Gold Lost Revenue",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Gold Lost Revenue Over Time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 342,
+        "width": 608,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Silver Lost Revenue",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Silver Lost Revenue Over Time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 342,
+        "width": 684,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "🥈",
+      "query": "select sum(doubleProperties.revenue) as \"Gold Lost Revenue\" FROM usersession where useraction.name != \"Finish\"  and stringProperties.memberstatus=\"Gold\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Gold Lost Revenue"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 342,
+        "width": 1634,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "🥈",
+      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(doubleProperties.revenue) as \"Gold Lost Revenue\" FROM usersession where useraction.name != \"Finish\" and doubleProperties.revenue>0  and stringProperties.memberstatus=\"Gold\"",
+      "type": "COLUMN_CHART",
+      "chartConfig": {
+        "xAxis": [
+          "Time"
+        ],
+        "yAxis": [
+          "Gold Lost Revenue"
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 722,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "🥉",
+      "query": "select sum(doubleProperties.revenue) as \"Silver Lost Revenue\" FROM usersession where useraction.name != \"Finish\" and stringProperties.memberstatus=\"Silver\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Silver Lost Revenue"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 722,
+        "left": 342,
+        "width": 1634,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "🥉",
+      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(doubleProperties.revenue) as \"Silver Lost Revenue\" FROM usersession where useraction.name != \"Finish\" and doubleProperties.revenue>0 and stringProperties.memberstatus=\"Silver\"",
+      "type": "COLUMN_CHART",
+      "chartConfig": {
+        "xAxis": [
+          "Time"
+        ],
+        "yAxis": [
+          "Silver Lost Revenue"
+        ]
+      }
+    }
+  ]
+}
