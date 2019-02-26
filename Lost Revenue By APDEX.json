@@ -1,0 +1,256 @@
+﻿{
+  "metadata": {
+    "clusterVersion": "1.165.0.20190225-190547",
+    "configurationVersions": [
+      2
+    ]
+  },
+  "dashboardMetadata": {
+    "name": "💲 Lost Revenue Analysis By APDEX",
+    "shared": true,
+    "sharingDetails": {
+      "linkShared": false,
+      "published": false
+    },
+    "dashboardFilter": {
+      "timeframe": "l_24_HOURS",
+      "managementZone": null
+    }
+  },
+  "tiles": [
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😊",
+      "query": "select sum(doubleProperties.revenue) as \"Satisfied Lost Revenue\" FROM usersession where useraction.name != \"Finish\" and useraction.apdexCategory=\"SATISFIED\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Satisfied Lost Revenue"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 342,
+        "width": 1634,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😊",
+      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(doubleProperties.revenue) as \"Satisfied Lost Revenue\" FROM usersession where useraction.name != \"Finish\" and doubleProperties.revenue>0   and useraction.apdexCategory=\"SATISFIED\"",
+      "type": "COLUMN_CHART",
+      "chartConfig": {
+        "xAxis": [
+          "Time"
+        ],
+        "yAxis": [
+          "Satisfied Lost Revenue"
+        ]
+      }
+    },
+    {
+      "name": "Satisfied Lost Revenue",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Satisfied Lost Revenue Over Time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 342,
+        "width": 836,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Tolerating Lost Revenue",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Tolerating Lost Revenue Over Time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 342,
+        "width": 608,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Frustrated Lost Revenue",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Frustrated Lost Revenue Over Time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 342,
+        "width": 684,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😟",
+      "query": "select sum(doubleProperties.revenue) as \"Tolerating Lost Revenue\" FROM usersession where useraction.name != \"Finish\"  and useraction.apdexCategory=\"TOLERATING\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Tolerating Lost Revenue"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 342,
+        "width": 1634,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😟",
+      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(doubleProperties.revenue) as \"Tolerating Lost Revenue\" FROM usersession where useraction.name != \"Finish\" and doubleProperties.revenue>0   and useraction.apdexCategory=\"TOLERATING\"",
+      "type": "COLUMN_CHART",
+      "chartConfig": {
+        "xAxis": [
+          "Time"
+        ],
+        "yAxis": [
+          "Tolerating Lost Revenue"
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 722,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😢",
+      "query": "select sum(doubleProperties.revenue) as \"Frustrated Lost Revenue\" FROM usersession where useraction.name != \"Finish\"  and useraction.apdexCategory=\"FRUSTRATED\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Frustrated Lost Revenue"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 722,
+        "left": 342,
+        "width": 1634,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😢",
+      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(doubleProperties.revenue) as \"Frustrated Lost Revenue\" FROM usersession where useraction.name != \"Finish\" and doubleProperties.revenue>0   and useraction.apdexCategory=\"FRUSTRATED\"",
+      "type": "COLUMN_CHART",
+      "chartConfig": {
+        "xAxis": [
+          "Time"
+        ],
+        "yAxis": [
+          "Frustrated Lost Revenue"
+        ]
+      }
+    }
+  ]
+}
