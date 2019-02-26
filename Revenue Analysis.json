@@ -1,0 +1,256 @@
+﻿{
+  "metadata": {
+    "clusterVersion": "1.165.0.20190225-190547",
+    "configurationVersions": [
+      2
+    ]
+  },
+  "dashboardMetadata": {
+    "name": "💲 Revenue Analysis",
+    "shared": true,
+    "sharingDetails": {
+      "linkShared": false,
+      "published": false
+    },
+    "dashboardFilter": {
+      "timeframe": "l_24_HOURS",
+      "managementZone": null
+    }
+  },
+  "tiles": [
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😊",
+      "query": "select sum(doubleProperties.revenue) as \"Revenue\" FROM usersession where useraction.name = \"Finish\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Revenue"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😟",
+      "query": "select sum(doubleProperties.revenue) as \"Risk Revenue\" FROM usersession where useraction.name = \"Finish\" and (useraction.apdexCategory =\"TOLERATING\" or useraction.apdexCategory =\"FRUSTRATED\" or useraction.apdexCategory =\"UNKNOWN\")",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Risk Revenue"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 722,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😢",
+      "query": "select sum(doubleProperties.revenue) as \"Lost Revenue\" FROM usersession where useraction.name != \"Finish\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Lost Revenue"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 342,
+        "width": 1634,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😊",
+      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(doubleProperties.revenue) as \"Revenue\" FROM usersession where useraction.name = \"Finish\" and doubleProperties.revenue>0",
+      "type": "COLUMN_CHART",
+      "chartConfig": {
+        "xAxis": [
+          "Time"
+        ],
+        "yAxis": [
+          "Revenue"
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 342,
+        "width": 1634,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😟",
+      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(doubleProperties.revenue) as \"Risk Revenue\" FROM usersession where useraction.name = \"Finish\" and (useraction.apdexCategory =\"TOLERATING\" or useraction.apdexCategory =\"FRUSTRATED\" or useraction.apdexCategory =\"UNKNOWN\")",
+      "type": "COLUMN_CHART",
+      "chartConfig": {
+        "xAxis": [
+          "Time"
+        ],
+        "yAxis": [
+          "Risk Revenue"
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 722,
+        "left": 342,
+        "width": 1634,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "😢",
+      "query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(doubleProperties.revenue) as \"Lost Revenue\" FROM usersession where useraction.name != \"Finish\" and doubleProperties.revenue>0",
+      "type": "COLUMN_CHART",
+      "chartConfig": {
+        "xAxis": [
+          "Time"
+        ],
+        "yAxis": [
+          "Lost Revenue"
+        ]
+      }
+    },
+    {
+      "name": "Revenue",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Revenue Over Time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": -2,
+        "left": 341,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Risk Revenue",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Risk Revenue Over Time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 357,
+        "left": 341,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Lost Revenue",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 0,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Lost Revenue Over Time",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 683,
+        "left": 338,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    }
+  ]
+}
