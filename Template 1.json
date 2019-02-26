@@ -1,0 +1,78 @@
+﻿{
+  "metadata": {
+    "clusterVersion": "1.165.0.20190225-190547",
+    "configurationVersions": [
+      2
+    ]
+  },
+  "dashboardMetadata": {
+    "name": "Template 1",
+    "shared": false,
+    "sharingDetails": {
+      "linkShared": true,
+      "published": false
+    },
+    "dashboardFilter": {
+      "timeframe": "l_2_HOURS",
+      "managementZone": null
+    }
+  },
+  "tiles": [
+    {
+      "name": "_____________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 266,
+        "width": 1596,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Header 1",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 874,
+        "width": 456,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "_____________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 266,
+        "width": 1596,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Header 2",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 874,
+        "width": 456,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    }
+  ]
+}
