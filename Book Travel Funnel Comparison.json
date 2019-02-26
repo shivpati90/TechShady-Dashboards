@@ -1,0 +1,384 @@
+﻿{
+  "metadata": {
+    "clusterVersion": "1.165.0.20190225-190547",
+    "configurationVersions": [
+      2
+    ]
+  },
+  "dashboardMetadata": {
+    "name": "🛒 Book Travel Funnel Comparison",
+    "shared": true,
+    "sharingDetails": {
+      "linkShared": false,
+      "published": false
+    },
+    "dashboardFilter": {
+      "timeframe": "l_2_HOURS",
+      "managementZone": null
+    }
+  },
+  "tiles": [
+    {
+      "name": "_____________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 380,
+        "width": 1596,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "🏡",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 380,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "User Sessions Query",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 228,
+        "left": 380,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "Home",
+      "query": "select count(*) as \"Requests\" from usersession where useraction.name=\"Home\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Requests"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 228,
+        "left": 684,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "Home->Search",
+      "query": "select count(*) as \"Requests\" from usersession where useraction.name=\"Home\" and useraction.name=\"Search\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Requests"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 228,
+        "left": 988,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "Home->Search->Review",
+      "query": "select count(*) as \"Requests\" from usersession where useraction.name=\"Home\" and useraction.name=\"Search\" and useraction.name=\"Review\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Requests"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 228,
+        "left": 1292,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "Home->Search->Payment",
+      "query": "select count(*) as \"Requests\" from usersession where useraction.name=\"Home\" and useraction.name=\"Search\" and useraction.name=\"Review\" and useraction.name=\"Payment\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Requests"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 228,
+        "left": 1596,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "Home->Search->Review->Payment->Finish",
+      "query": "select count(*) as \"Requests\" from usersession where useraction.name=\"Home\" and useraction.name=\"Search\" and useraction.name=\"Review\" and useraction.name=\"Payment\" and useraction.name=\"Finish\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Requests"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "🏡➡🔎",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 684,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "🏡➡🔎➡👀",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 988,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "🏡➡🔎➡👀➡💳",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 1292,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "🏡➡🔎➡👀➡💳➡🏁",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 1596,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Current Requests",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 114,
+        "width": 228,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Previous Requests",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 114,
+        "width": 228,
+        "height": 38
+      },
+      "tileFilter": {
+        "managementZone": null
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 380,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "Home",
+      "query": "select count(*) as \"Requests\" from usersession where useraction.name=\"Home\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Requests"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 684,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "Home->Search",
+      "query": "select count(*) as \"Requests\" from usersession where useraction.name=\"Home\" and useraction.name=\"Search\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Requests"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 988,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "Home->Search->Review",
+      "query": "select count(*) as \"Requests\" from usersession where useraction.name=\"Home\" and useraction.name=\"Search\" and useraction.name=\"Review\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Requests"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 1292,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "Home->Search->Payment",
+      "query": "select count(*) as \"Requests\" from usersession where useraction.name=\"Home\" and useraction.name=\"Search\" and useraction.name=\"Review\" and useraction.name=\"Payment\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Requests"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 1596,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "managementZone": null
+      },
+      "customName": "Home->Search->Review->Payment->Finish",
+      "query": "select count(*) as \"Requests\" from usersession where useraction.name=\"Home\" and useraction.name=\"Search\" and useraction.name=\"Review\" and useraction.name=\"Payment\" and useraction.name=\"Finish\"",
+      "type": "KPI",
+      "chartConfig": {
+        "xAxis": [
+          "Requests"
+        ],
+        "yAxis": [
+          null
+        ]
+      }
+    }
+  ]
+}
