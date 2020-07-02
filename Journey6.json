@@ -1,0 +1,439 @@
+{
+ "metadata": {
+ "configurationVersions": [
+  2
+ ],
+ "clusterVersion": "1.179.0.20190919-152218"
+ },
+ "id": "65312f05-ca6c-4896-b2b4-1bc8ce3da313",
+ "dashboardMetadata": {
+ "name": "\ud83d\uded2 MyFunnel User Journey",
+ "shared": true,
+ "owner": "MyEmail",
+ "sharingDetails": {
+  "linkShared": true,
+  "published": true
+ },
+ "dashboardFilter": {
+  "timeframe": "l_2_HOURS",
+  "managementZone": null
+ },
+    "tags": ["${UserJourneyName}","${app.name}","User Journey"]
+ },
+ "tiles": [
+ {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 152,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-1}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-1} and not ${journey.where-2}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 836,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-4}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and ${journey.where-3} and ${journey.where-4} and not ${journey.where-5}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 1064,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-5}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and ${journey.where-3} and ${journey.where-4} and ${journey.where-5} and not ${journey.where-6}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 1292,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-6}",
+        "query": "select 0 as \"Abandons\" from usersession limit 1",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 152,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-1}](#dashboard;id=1fc1af04-a855-43cb-855c-c32f4ecda313)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1064,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-5}](#dashboard;id=a7340848-3f03-4155-ac15-d8ea4a7da313)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 836,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-4}](#dashboard;id=7f64e3ef-239c-416a-b3a4-66b99beda313)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1292,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-6}](#dashboard;id=0d81ee7c-f7ba-4626-a087-60b76ecda313)"
+    }, {
+        "name": "Sessions",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 152,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Abandons",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Duration",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 494,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Errors",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 836,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-4}",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-4}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 152,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-1}",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-1}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 1064,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-5}",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-5}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 1292,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-6}",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-6}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 152,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-1}",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-1}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 836,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-4}",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-4}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 1064,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-5}",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-5}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 1292,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-6}",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-6}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1634,
+            "width": 38,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "![BackButton]()"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 380,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-2}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and not ${journey.where-3}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 608,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-3}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and ${journey.where-3} and not ${journey.where-4}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 380,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-2}",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-2} ",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 608,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-3}",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-3}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 380,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-2}",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-2}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 608,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-3}",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"${app.name}\" ${regionClause} ${uspClause} and ${journey.where-3}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 380,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-2}](#dashboard;id=2662ddb8-dd6a-4345-a1bc-7ff069eda313)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 608,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-3}](#dashboard;id=10a69069-74c2-4eba-b18a-6856d91da313)"
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 152,
+            "width": 1368,
+            "height": 266
+        },
+        "tileFilter": {},
+        "customName": "MyFunnel User Journey",
+        "query": "SELECT FUNNEL(${journey.funnel}) FROM usersession where useraction.application=\"${app.name}\" ${regionClause} ${uspClause}",
+        "type": "FUNNEL",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }]
+}
