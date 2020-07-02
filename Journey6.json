@@ -7,7 +7,7 @@
  },
  "id": "65312f05-ca6c-4896-b2b4-1bc8ce3da734",
  "dashboardMetadata": {
- "name": "\ud83d\uded2 MyFunnel User Journey",
+ "name": "\ud83d\uded2 ${UserJourneyName} User Journey",
  "shared": true,
  "owner": "MyEmail",
  "sharingDetails": {
@@ -430,7 +430,7 @@
             "height": 266
         },
         "tileFilter": {},
-        "customName": "MyFunnel User Journey",
+        "customName": "${UserJourneyName} User Journey",
         "query": "SELECT FUNNEL(${journey.funnel}) FROM usersession where useraction.application=\"${app.name}\" ${regionClause} ${uspClause}",
         "type": "FUNNEL",
         "timeFrameShift": "dynamic",
