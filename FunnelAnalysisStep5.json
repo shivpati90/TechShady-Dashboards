@@ -7,7 +7,7 @@
 	},
 	"id": "a7340848-3f03-4155-ac15-d8ea4a7da734",
 	"dashboardMetadata": {
-		"name": "\ud83c\udfaf MyFunnel Forensics - ${journey.header-5}",
+		"name": "\ud83c\udfaf ${UserJourneyName} Forensics - ${journey.header-5}",
 		"shared": true,
 		"owner": "MyEmail",
 		"sharingDetails": {
@@ -71,7 +71,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests](https://${url}/ui/user-sessions/query?sessionquery=select%20UserId,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -87,7 +87,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests](https://${url}/ui/user-sessions/query?sessionquery=select%20UserId,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "DTAQL",
@@ -141,7 +141,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Duration](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.duration%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.duration%20desc&visualization=TABLE)"
+      "markdown": "## [Duration](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.duration%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.duration%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -157,7 +157,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Duration](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.duration%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.duration%20desc&visualization=TABLE)"
+      "markdown": "## [Duration](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.duration%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.duration%20desc&visualization=TABLE)"
     },
     {
       "name": "DTAQL",
@@ -211,7 +211,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Errors](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,totalErrorCount%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20and totalErrorCount%3E0%20order%20by%20totalErrorCount%20desc&visualization=TABLE)"
+      "markdown": "## [Errors](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,totalErrorCount%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20and totalErrorCount%3E0%20order%20by%20totalErrorCount%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -227,7 +227,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Errors](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,totalErrorCount%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and totalErrorCount%3E0%20order%20by%20totalErrorCount%20DESC&visualization=TABLE)"
+      "markdown": "## [Errors](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,totalErrorCount%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and totalErrorCount%3E0%20order%20by%20totalErrorCount%20DESC&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -243,7 +243,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [NonEngaged](https://MyTenant/ui/user-sessions/query?sessionquerytileconfigid=55885bfd-7d70-450d-b0a6-8570fe60dd00&sessionquery=select%20userid%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20usersession.duration%3E180000%20and%20${journey.where-5}%20and%20${journey.where-6}%20and%20userActionCount%3C10&visualization=TABLE)"
+      "markdown": "## [NonEngaged](https://${url}/ui/user-sessions/query?sessionquerytileconfigid=55885bfd-7d70-450d-b0a6-8570fe60dd00&sessionquery=select%20userid%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20usersession.duration%3E180000%20and%20${journey.where-5}%20and%20${journey.where-6}%20and%20userActionCount%3C10&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -259,7 +259,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [NonEngaged](https://MyTenant/ui/user-sessions/query?sessionquerytileconfigid=dd66617c-b601-44f6-982c-a871cc80b8a0&sessionquery=select%20userid%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20usersession.duration%3E180000%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and%20userActionCount%3C10&visualization=TABLE)"
+      "markdown": "## [NonEngaged](https://${url}/ui/user-sessions/query?sessionquerytileconfigid=dd66617c-b601-44f6-982c-a871cc80b8a0&sessionquery=select%20userid%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20usersession.duration%3E180000%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and%20userActionCount%3C10&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -275,7 +275,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Rage](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,numberOfRageClicks%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20numberOfRageClicks%3E0%20and%20${journey.where-5}%20and%20${journey.where-6}&visualization=TABLE)"
+      "markdown": "## [Rage](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,numberOfRageClicks%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20numberOfRageClicks%3E0%20and%20${journey.where-5}%20and%20${journey.where-6}&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -291,7 +291,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Rage](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,numberOfRageClicks%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20numberOfRageClicks%3E0%20and%20${journey.where-5}%20and%20not%20${journey.where-6}&visualization=TABLE)"
+      "markdown": "## [Rage](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,numberOfRageClicks%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20numberOfRageClicks%3E0%20and%20${journey.where-5}%20and%20not%20${journey.where-6}&visualization=TABLE)"
     },
     {
       "name": "DTAQL",
@@ -838,7 +838,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Visually Complete](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.visuallyCompleteTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.visuallyCompleteTime%20desc&visualization=TABLE)"
+      "markdown": "## [Visually Complete](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.visuallyCompleteTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.visuallyCompleteTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -854,7 +854,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Visually Complete](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.visuallyCompleteTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.visuallyCompleteTime%20desc&visualization=TABLE)"
+      "markdown": "## [Visually Complete](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.visuallyCompleteTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.visuallyCompleteTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -870,7 +870,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Speed Index](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.speedIndex%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.speedIndex%20desc&visualization=TABLE)"
+      "markdown": "## [Speed Index](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.speedIndex%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.speedIndex%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -886,7 +886,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Speed Index](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.speedIndex%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.speedIndex%20desc&visualization=TABLE)"
+      "markdown": "## [Speed Index](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.speedIndex%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.speedIndex%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -902,7 +902,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Server](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.serverTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.serverTime%20desc&visualization=TABLE)"
+      "markdown": "## [Server](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.serverTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.serverTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -918,7 +918,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Server](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.serverTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.serverTime%20desc&visualization=TABLE)"
+      "markdown": "## [Server](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.serverTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.serverTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -934,7 +934,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Network](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.networkTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.networkTime%20desc&visualization=TABLE)"
+      "markdown": "## [Network](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.networkTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.networkTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -950,7 +950,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Network](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.networkTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.networkTime%20desc&visualization=TABLE)"
+      "markdown": "## [Network](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.networkTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.networkTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -966,7 +966,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Request Start](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.requestStart%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.requestStart%20desc&visualization=TABLE)"
+      "markdown": "## [Request Start](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.requestStart%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.requestStart%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -982,7 +982,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Request Start](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.requestStart%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.requestStart%20desc&visualization=TABLE)"
+      "markdown": "## [Request Start](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.requestStart%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.requestStart%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -998,7 +998,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Load Event End](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.loadEventEnd%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.loadEventEnd%20desc&visualization=TABLE)"
+      "markdown": "## [Load Event End](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.loadEventEnd%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.loadEventEnd%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1014,7 +1014,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Load Event End](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.loadEventEnd%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.loadEventEnd%20desc&visualization=TABLE)"
+      "markdown": "## [Load Event End](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.loadEventEnd%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.loadEventEnd%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1030,7 +1030,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [DOM Interactive](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.documentInteractiveTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.documentInteractiveTime%20desc&visualization=TABLE)"
+      "markdown": "## [DOM Interactive](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.documentInteractiveTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20useraction.documentInteractiveTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1046,7 +1046,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [DOM Interactive](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.documentInteractiveTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.documentInteractiveTime%20desc&visualization=TABLE)"
+      "markdown": "## [DOM Interactive](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.documentInteractiveTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20useraction.documentInteractiveTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1062,7 +1062,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [HTTP Errors](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.httpRequestsWithErrors%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and%20useraction.httpRequestsWithErrors%3E0%20order%20by%20useraction.httpRequestsWithErrors%20DESC&visualization=TABLE)"
+      "markdown": "## [HTTP Errors](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.httpRequestsWithErrors%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and%20useraction.httpRequestsWithErrors%3E0%20order%20by%20useraction.httpRequestsWithErrors%20DESC&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1078,7 +1078,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Failed Images](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedImages%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20and%20useraction.failedImages%3E0%20order%20by%20useraction.failedImages%20desc&visualization=TABLE)"
+      "markdown": "## [Failed Images](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedImages%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20and%20useraction.failedImages%3E0%20order%20by%20useraction.failedImages%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1094,7 +1094,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Failed Images](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedImages%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and%20useraction.failedImages%3E0%20order%20by%20useraction.failedImages%20DESC&visualization=TABLE)"
+      "markdown": "## [Failed Images](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedImages%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and%20useraction.failedImages%3E0%20order%20by%20useraction.failedImages%20DESC&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1110,7 +1110,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Failed Xhr Requests](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedXhrRequests%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and%20useraction.failedXhrRequests%3E0%20order%20by%20useraction.failedXhrRequests%20DESC&visualization=TABLE)"
+      "markdown": "## [Failed Xhr Requests](https://${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedXhrRequests%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and%20useraction.failedXhrRequests%3E0%20order%20by%20useraction.failedXhrRequests%20DESC&visualization=TABLE)"
     },
     {
       "name": "Environment Breakdown",
@@ -1141,7 +1141,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests by Location](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests by Location](https://${url}/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1157,7 +1157,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests by Location](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests by Location](https://${url}/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "DTAQL",
@@ -1209,7 +1209,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests by City](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,City,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests by City](https://${url}/ui/user-sessions/query?sessionquery=select%20UserId,City,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20${journey.where-6}%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1225,7 +1225,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests by City](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,City,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests by City](https://${url}/ui/user-sessions/query?sessionquery=select%20UserId,City,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-5}%20and%20not%20${journey.where-6}%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
