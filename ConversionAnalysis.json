@@ -91,7 +91,7 @@
 				"managementZone": null
 			},
 			"customName": "\uD83C\uDFC1",
-			"query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and CombinedStep ",
+			"query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-last} ",
 			"type": "LINE_CHART"
 		},
 		{
@@ -269,7 +269,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"SATISFIED\" and CombinedStep and\n\t${uspRevenue.id}>0\n",
+			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"SATISFIED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -287,7 +287,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"TOLERATED\" and CombinedStep and\n\t${uspRevenue.id}>0\n",
+			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"TOLERATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -305,7 +305,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"FRUSTRATED\" and CombinedStep and\n\t${uspRevenue.id}>0\n",
+			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"FRUSTRATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -323,7 +323,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "SELECT City, sum(${uspRevenue.id}) FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and CombinedStep   group by City order by sum(${uspRevenue.id}) desc",
+			"query": "SELECT City, sum(${uspRevenue.id}) FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-last}   group by City order by sum(${uspRevenue.id}) desc",
 			"type": "PIE_CHART"
 		},
 		{
@@ -437,7 +437,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "SELECT userExperienceScore, sum(${uspRevenue.id}) FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and CombinedStep group by userExperienceScore order by sum(${uspRevenue.id}) desc",
+			"query": "SELECT userExperienceScore, sum(${uspRevenue.id}) FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-last} group by userExperienceScore order by sum(${uspRevenue.id}) desc",
 			"type": "PIE_CHART"
 		},
 		{
@@ -455,7 +455,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tCombinedStep and\n\t${uspRevenue.id}>0\n",
+			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\t${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
