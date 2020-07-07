@@ -1,0 +1,1311 @@
+﻿{
+	"metadata": {
+		"configurationVersions": [
+			2
+		],
+		"clusterVersion": "1.175.0.20190729-125021"
+	},
+	"id": "a7340848-3f03-4155-ac06-d8ea4a7da313",
+	"dashboardMetadata": {
+		"name": "\ud83c\udfaf MyFunnel Forensics - StepHeader6",
+		"shared": true,
+		"owner": "MyEmail",
+		"sharingDetails": {
+			"linkShared": true,
+			"published": true
+		},
+		"dashboardFilter": {
+			"timeframe": "l_2_HOURS",
+			"managementZone": null
+		},
+    "tags": ["CEM EXT","${journey.where-1}","Forensics","User Journey"]
+	},
+  "tiles": [
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 152,
+        "width": 380,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Location",
+      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7} and country!=\"synthetic\" and country IS NOT NULL group by country",
+      "type": "PIE_CHART"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 152,
+        "width": 380,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "Location",
+      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7} and country!=\"synthetic\" and country IS NOT NULL group by country",
+      "type": "PIE_CHART"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 950,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Requests](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20order%20by%20duration%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 950,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Requests](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20order%20by%20duration%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 1292,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 1292,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 1292,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Duration](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.duration%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20order%20by%20useraction.duration%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 1292,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Duration](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.duration%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20order%20by%20useraction.duration%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 3762,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\uD83D\uDEA8",
+      "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 3762,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\uD83D\uDEA8",
+      "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 3762,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Errors](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,totalErrorCount%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20and totalErrorCount%3E0%20order%20by%20totalErrorCount%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 3762,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Errors](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,totalErrorCount%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20and totalErrorCount%3E0%20order%20by%20totalErrorCount%20DESC&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 4408,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [NonEngaged](https://MyTenant/ui/user-sessions/query?sessionquerytileconfigid=55885bfd-7d70-450d-b0a6-8570fe60dd00&sessionquery=select%20userid%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20usersession.duration%3E180000%20and%20${journey.where-6}%20and%20${journey.where-7}%20and%20userActionCount%3C10&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 4408,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [NonEngaged](https://MyTenant/ui/user-sessions/query?sessionquerytileconfigid=dd66617c-b601-44f6-982c-a871cc80b8a0&sessionquery=select%20userid%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20usersession.duration%3E180000%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20and%20userActionCount%3C10&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 4712,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Rage](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,numberOfRageClicks%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20numberOfRageClicks%3E0%20and%20${journey.where-6}%20and%20${journey.where-7}&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 4712,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Rage](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,numberOfRageClicks%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20numberOfRageClicks%3E0%20and%20${journey.where-6}%20and%20not%20${journey.where-7}&visualization=TABLE)"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 4712,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\uD83D\uDE21",
+      "query": "select sum(numberOfRageClicks) as \"Rages\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and  numberOfRageClicks>0 and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 4712,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\uD83D\uDE21",
+      "query": "select sum(numberOfRageClicks) as \"Rages\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and  numberOfRageClicks>0 and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 4408,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\uD83D\uDE34",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and usersession.duration>180000 and ${journey.where-6} and ${journey.where-7} and userActionCount<10",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 4408,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\uD83D\uDE34",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and usersession.duration>180000 and ${journey.where-6} and not ${journey.where-7} and userActionCount<10",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 950,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\ud83d\udc4d",
+      "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 950,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\ud83d\udc4e",
+      "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "Request Breakdown",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 950,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Performance Breakdown",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 1292,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
+      "name": "______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 152,
+        "width": 4864,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Error Breakdown",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 3762,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Usability Breakdown",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 4408,
+        "width": 266,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 2204,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.serverTime) as \"Server\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 2204,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.serverTime) as \"Server\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 2508,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.networkTime) as \"Network\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 2508,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.networkTime) as \"Network\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 2812,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.requestStart) as \"Request Start\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 2812,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.requestStart) as \"Request Start\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 3116,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.loadEventEnd) as \"Load Event End\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 3116,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.loadEventEnd) as \"Load Event End\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 3420,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.documentInteractiveTime) as \"DOM Interactive\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 3420,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.documentInteractiveTime) as \"DOM Interactive\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1102,
+        "left": 3724,
+        "width": 228,
+        "height": 228
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\uD83D\uDEA8",
+      "query": "select sum(useraction.httpRequestsWithErrors) as \"HTTP Errors\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 4066,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\uD83D\uDEA8",
+      "query": "select sum(useraction.failedImages) as \"Failed Images\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 4066,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\uD83D\uDEA8",
+      "query": "select sum(useraction.failedImages) as \"Failed Images\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 1102,
+        "left": 4180,
+        "width": 228,
+        "height": 228
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\uD83D\uDEA8",
+      "query": "select sum(useraction.failedXhrRequests) as \"Failed Xhr Requests\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 1596,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.visuallyCompleteTime) as \"Visually Complete\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 1900,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.speedIndex) as \"Speed Index\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 1596,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.visuallyCompleteTime) as \"Visually Complete\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 1900,
+        "width": 304,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "\u23F1",
+      "query": "select AVG(useraction.speedIndex) as \"Speed Index\" from usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7}",
+      "type": "SINGLE_VALUE",
+      "timeFrameShift": "dynamic"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 1596,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Visually Complete](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.visuallyCompleteTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20order%20by%20useraction.visuallyCompleteTime%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 1596,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Visually Complete](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.visuallyCompleteTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20order%20by%20useraction.visuallyCompleteTime%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 1900,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Speed Index](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.speedIndex%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20order%20by%20useraction.speedIndex%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 1900,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Speed Index](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.speedIndex%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20order%20by%20useraction.speedIndex%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 2204,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Server](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.serverTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20order%20by%20useraction.serverTime%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 2204,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Server](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.serverTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20order%20by%20useraction.serverTime%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 2508,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Network](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.networkTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20order%20by%20useraction.networkTime%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 2508,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Network](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.networkTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20order%20by%20useraction.networkTime%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 2812,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Request Start](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.requestStart%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20order%20by%20useraction.requestStart%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 2812,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Request Start](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.requestStart%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20order%20by%20useraction.requestStart%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 3116,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Load Event End](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.loadEventEnd%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20order%20by%20useraction.loadEventEnd%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 3116,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Load Event End](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.loadEventEnd%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20order%20by%20useraction.loadEventEnd%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 3420,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [DOM Interactive](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.documentInteractiveTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20order%20by%20useraction.documentInteractiveTime%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 3420,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [DOM Interactive](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.documentInteractiveTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20order%20by%20useraction.documentInteractiveTime%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1064,
+        "left": 3724,
+        "width": 228,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [HTTP Errors](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.httpRequestsWithErrors%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20and%20useraction.httpRequestsWithErrors%3E0%20order%20by%20useraction.httpRequestsWithErrors%20DESC&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 4066,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Failed Images](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedImages%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20and%20useraction.failedImages%3E0%20order%20by%20useraction.failedImages%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 4066,
+        "width": 304,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Failed Images](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedImages%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20and%20useraction.failedImages%3E0%20order%20by%20useraction.failedImages%20DESC&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1064,
+        "left": 4180,
+        "width": 228,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Failed Xhr Requests](https://MyTenant/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedXhrRequests%20from%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20and%20useraction.failedXhrRequests%3E0%20order%20by%20useraction.failedXhrRequests%20DESC&visualization=TABLE)"
+    },
+    {
+      "name": "Environment Breakdown",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 152,
+        "width": 380,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      }
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 152,
+        "width": 380,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Requests by Location](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 152,
+        "width": 380,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Requests by Location](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 152,
+        "left": 532,
+        "width": 380,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "City",
+      "query": "select count(usersessionid) as \"Requests\",City FROM usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and ${journey.where-7} group by City",
+      "type": "PIE_CHART"
+    },
+    {
+      "name": "DTAQL",
+      "tileType": "DTAQL",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 532,
+        "width": 380,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "customName": "City",
+      "query": "select count(usersessionid) as \"Requests\",City FROM usersession where useraction.application=\"${journey.where-1}\" ${uspClause} and ${journey.where-6} and not ${journey.where-7} group by City",
+      "type": "PIE_CHART"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 114,
+        "left": 532,
+        "width": 380,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Requests by City](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,City,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20${journey.where-7}%20order%20by%20duration%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 532,
+        "width": 380,
+        "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "## [Requests by City](https://MyTenant/ui/user-sessions/query?sessionquery=select%20UserId,City,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${journey.where-1}%22%20${uspClause}%20and%20${journey.where-6}%20and%20not%20${journey.where-7}%20order%20by%20duration%20desc&visualization=TABLE)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 0,
+        "width": 114,
+        "height": 228
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "![]()\n## Sessions![]()\n## That![]()\n## Continued![]()\n## To![]()\n## StepHeader7"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 228,
+        "left": 114,
+        "width": 38,
+        "height": 76
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "![]()\n![]()\n # \u25b6"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 0,
+        "width": 114,
+        "height": 228
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "![]()\n## Sessions![]()\n## That![]()\n## Exited![]()\n## At![]()\n## StepHeader6"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 608,
+        "left": 114,
+        "width": 38,
+        "height": 76
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "![]()\n![]()\n # \u25b6"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+    "top": 0,
+    "left": 4978,
+    "width": 38,
+    "height": 38
+      },
+      "tileFilter": {
+        "timeframe": null,
+        "managementZone": null
+      },
+      "markdown": "![BackButton]()"
+  }
+  ]
+}
