@@ -1,5 +1,5 @@
 ## BizOps User Journey Dashboard
-This dashboard pack provides a quick overview of your user journey with a focus on conversion count, abandon count, durtion average and error count for each user journey step. Mark each step of your user journey as a key user action or conversion goal.
+This dashboard pack provides a quick overview of your user journey with a focus on conversion count, abandon count, durtion average and error count for each user journey step. Mark each step of your user journey as a key user action or conversion goal. Each step header is a drill down link to dashboard the compares sessions that continues vs sessions that exited for eacj user journey step.
 
 ![User Journey](UJ.png)
 
