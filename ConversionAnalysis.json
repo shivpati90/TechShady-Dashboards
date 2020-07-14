@@ -18,7 +18,7 @@
 			"timeframe": "l_2_HOURS",
 			"managementZone": null
 		},
-    "tags": ["${app.name}","Analysis"]
+    "tags": ["${app-1.name}","Analysis"]
 
 	},
 	"tiles": [
@@ -37,7 +37,7 @@
 				"managementZone": null
 			},
 			"customName": "\uD83D\uDE0A",
-			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"SATISFIED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
+			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"SATISFIED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -55,7 +55,7 @@
 				"managementZone": null
 			},
 			"customName": "\uD83D\uDE1F",
-			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"TOLERATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
+			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"TOLERATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -73,7 +73,7 @@
 				"managementZone": null
 			},
 			"customName": "\uD83D\uDE22",
-			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"FRUSTRATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
+			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"FRUSTRATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -91,7 +91,7 @@
 				"managementZone": null
 			},
 			"customName": "\uD83C\uDFC1",
-			"query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-last} ",
+			"query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-last} ",
 			"type": "LINE_CHART"
 		},
 		{
@@ -236,7 +236,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83c\udfc1",
-			"query": "select distinct DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", count(userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\t${journey.where-last} and\n\t${uspRevenue.id}>0\n",
+			"query": "select distinct DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", count(userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\t${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "LINE_CHART"
 		},
 		{
@@ -269,7 +269,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"SATISFIED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
+			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"SATISFIED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -287,7 +287,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"TOLERATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
+			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"TOLERATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -305,7 +305,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\tuserExperienceScore=\"FRUSTRATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
+			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"FRUSTRATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -323,7 +323,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "SELECT City, sum(${uspRevenue.id}) FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-last}   group by City order by sum(${uspRevenue.id}) desc",
+			"query": "SELECT City, sum(${uspRevenue.id}) FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-last}   group by City order by sum(${uspRevenue.id}) desc",
 			"type": "PIE_CHART"
 		},
 		{
@@ -341,7 +341,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83c\udfc1",
-			"query": "SELECT userExperienceScore, count(userSessionId) FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-last} group by userExperienceScore order by count(userSessionId) desc",
+			"query": "SELECT userExperienceScore, count(userSessionId) FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-last} group by userExperienceScore order by count(userSessionId) desc",
 			"type": "PIE_CHART"
 		},
 		{
@@ -359,7 +359,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83c\udfc1",
-			"query": "SELECT City, count(userSessionId) FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-last}   group by City order by count(userSessionId) desc",
+			"query": "SELECT City, count(userSessionId) FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-last}   group by City order by count(userSessionId) desc",
 			"type": "PIE_CHART"
 		},
 		{
@@ -437,7 +437,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "SELECT userExperienceScore, sum(${uspRevenue.id}) FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-last} group by userExperienceScore order by sum(${uspRevenue.id}) desc",
+			"query": "SELECT userExperienceScore, sum(${uspRevenue.id}) FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-last} group by userExperienceScore order by sum(${uspRevenue.id}) desc",
 			"type": "PIE_CHART"
 		},
 		{
@@ -455,7 +455,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\t${journey.where-last} and\n\t${uspRevenue.id}>0\n",
+			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\t${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{
@@ -473,7 +473,7 @@
 				"managementZone": null
 			},
 			"customName": "\ud83c\udfc1",
-			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and\n\t${journey.where-last} and\n\t${uspRevenue.id}>0\n",
+			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\t${journey.where-last} and\n\t${uspRevenue.id}>0\n",
 			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
 		},
 		{

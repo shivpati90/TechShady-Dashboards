@@ -18,7 +18,7 @@
 			"timeframe": "l_2_HOURS",
 			"managementZone": null
 		},
-    "tags": ["${app.name}","Forensics","User Journey"]
+    "tags": ["${app-1.name}","Forensics","User Journey"]
 	},
   "tiles": [
     {
@@ -36,7 +36,7 @@
         "managementZone": null
       },
       "customName": "Location",
-      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10} and country!=\"synthetic\" and country IS NOT NULL group by country",
+      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10} and country!=\"synthetic\" and country IS NOT NULL group by country",
       "type": "PIE_CHART"
     },
     {
@@ -54,7 +54,7 @@
         "managementZone": null
       },
       "customName": "Location",
-      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10} and country!=\"synthetic\" and country IS NOT NULL group by country",
+      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10} and country!=\"synthetic\" and country IS NOT NULL group by country",
       "type": "PIE_CHART"
     },
     {
@@ -71,7 +71,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests](${url}/ui/user-sessions/query?sessionquery=select%20UserId,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests](${url}/ui/user-sessions/query?sessionquery=select%20UserId,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -87,7 +87,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests](${url}/ui/user-sessions/query?sessionquery=select%20UserId,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests](${url}/ui/user-sessions/query?sessionquery=select%20UserId,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "DTAQL",
@@ -104,7 +104,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
+      "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -123,7 +123,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -141,7 +141,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Duration](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.duration%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.duration%20desc&visualization=TABLE)"
+      "markdown": "## [Duration](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.duration%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.duration%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -157,7 +157,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Duration](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.duration%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.duration%20desc&visualization=TABLE)"
+      "markdown": "## [Duration](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.duration%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.duration%20desc&visualization=TABLE)"
     },
     {
       "name": "DTAQL",
@@ -174,7 +174,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
+      "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -193,7 +193,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -211,7 +211,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Errors](${url}/ui/user-sessions/query?sessionquery=select%20userid,totalErrorCount%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20and totalErrorCount%3E0%20order%20by%20totalErrorCount%20desc&visualization=TABLE)"
+      "markdown": "## [Errors](${url}/ui/user-sessions/query?sessionquery=select%20userid,totalErrorCount%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20and totalErrorCount%3E0%20order%20by%20totalErrorCount%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -227,7 +227,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Errors](${url}/ui/user-sessions/query?sessionquery=select%20userid,totalErrorCount%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and totalErrorCount%3E0%20order%20by%20totalErrorCount%20DESC&visualization=TABLE)"
+      "markdown": "## [Errors](${url}/ui/user-sessions/query?sessionquery=select%20userid,totalErrorCount%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and totalErrorCount%3E0%20order%20by%20totalErrorCount%20DESC&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -243,7 +243,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [NonEngaged](${url}/ui/user-sessions/query?sessionquerytileconfigid=55885bfd-7d70-450d-b0a6-8570fe60dd00&sessionquery=select%20userid%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20usersession.duration%3E180000%20and%20${journey.where-9}%20and%20${journey.where-10}%20and%20userActionCount%3C10&visualization=TABLE)"
+      "markdown": "## [NonEngaged](${url}/ui/user-sessions/query?sessionquerytileconfigid=55885bfd-7d70-450d-b0a6-8570fe60dd00&sessionquery=select%20userid%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20usersession.duration%3E180000%20and%20${journey.where-9}%20and%20${journey.where-10}%20and%20userActionCount%3C10&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -259,7 +259,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [NonEngaged](${url}/ui/user-sessions/query?sessionquerytileconfigid=dd66617c-b601-44f6-982c-a871cc80b8a0&sessionquery=select%20userid%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20usersession.duration%3E180000%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and%20userActionCount%3C10&visualization=TABLE)"
+      "markdown": "## [NonEngaged](${url}/ui/user-sessions/query?sessionquerytileconfigid=dd66617c-b601-44f6-982c-a871cc80b8a0&sessionquery=select%20userid%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20usersession.duration%3E180000%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and%20userActionCount%3C10&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -275,7 +275,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Rage](${url}/ui/user-sessions/query?sessionquery=select%20userid,numberOfRageClicks%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20numberOfRageClicks%3E0%20and%20${journey.where-9}%20and%20${journey.where-10}&visualization=TABLE)"
+      "markdown": "## [Rage](${url}/ui/user-sessions/query?sessionquery=select%20userid,numberOfRageClicks%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20numberOfRageClicks%3E0%20and%20${journey.where-9}%20and%20${journey.where-10}&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -291,7 +291,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Rage](${url}/ui/user-sessions/query?sessionquery=select%20userid,numberOfRageClicks%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20numberOfRageClicks%3E0%20and%20${journey.where-9}%20and%20not%20${journey.where-10}&visualization=TABLE)"
+      "markdown": "## [Rage](${url}/ui/user-sessions/query?sessionquery=select%20userid,numberOfRageClicks%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20numberOfRageClicks%3E0%20and%20${journey.where-9}%20and%20not%20${journey.where-10}&visualization=TABLE)"
     },
     {
       "name": "DTAQL",
@@ -308,7 +308,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE21",
-      "query": "select sum(numberOfRageClicks) as \"Rages\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and  numberOfRageClicks>0 and ${journey.where-9} and ${journey.where-10}",
+      "query": "select sum(numberOfRageClicks) as \"Rages\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and  numberOfRageClicks>0 and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -327,7 +327,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE21",
-      "query": "select sum(numberOfRageClicks) as \"Rages\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and  numberOfRageClicks>0 and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select sum(numberOfRageClicks) as \"Rages\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and  numberOfRageClicks>0 and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -346,7 +346,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE34",
-      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and usersession.duration>180000 and ${journey.where-9} and ${journey.where-10} and userActionCount<10",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and usersession.duration>180000 and ${journey.where-9} and ${journey.where-10} and userActionCount<10",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -365,7 +365,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE34",
-      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and usersession.duration>180000 and ${journey.where-9} and not ${journey.where-10} and userActionCount<10",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and usersession.duration>180000 and ${journey.where-9} and not ${journey.where-10} and userActionCount<10",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -384,7 +384,7 @@
         "managementZone": null
       },
       "customName": "\ud83d\udc4d",
-      "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
+      "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -403,7 +403,7 @@
         "managementZone": null
       },
       "customName": "\ud83d\udc4e",
-      "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -497,7 +497,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.serverTime) as \"Server\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
+      "query": "select AVG(useraction.serverTime) as \"Server\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -516,7 +516,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.serverTime) as \"Server\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select AVG(useraction.serverTime) as \"Server\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -535,7 +535,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.networkTime) as \"Network\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
+      "query": "select AVG(useraction.networkTime) as \"Network\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -554,7 +554,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.networkTime) as \"Network\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select AVG(useraction.networkTime) as \"Network\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -573,7 +573,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.requestStart) as \"Request Start\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
+      "query": "select AVG(useraction.requestStart) as \"Request Start\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -592,7 +592,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.requestStart) as \"Request Start\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select AVG(useraction.requestStart) as \"Request Start\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -611,7 +611,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.loadEventEnd) as \"Load Event End\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
+      "query": "select AVG(useraction.loadEventEnd) as \"Load Event End\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -630,7 +630,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.loadEventEnd) as \"Load Event End\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select AVG(useraction.loadEventEnd) as \"Load Event End\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -649,7 +649,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.documentInteractiveTime) as \"DOM Interactive\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
+      "query": "select AVG(useraction.documentInteractiveTime) as \"DOM Interactive\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -668,7 +668,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.documentInteractiveTime) as \"DOM Interactive\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select AVG(useraction.documentInteractiveTime) as \"DOM Interactive\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -687,7 +687,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.httpRequestsWithErrors) as \"HTTP Errors\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select sum(useraction.httpRequestsWithErrors) as \"HTTP Errors\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -706,7 +706,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.failedImages) as \"Failed Images\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
+      "query": "select sum(useraction.failedImages) as \"Failed Images\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -725,7 +725,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.failedImages) as \"Failed Images\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select sum(useraction.failedImages) as \"Failed Images\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -744,7 +744,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.failedXhrRequests) as \"Failed Xhr Requests\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select sum(useraction.failedXhrRequests) as \"Failed Xhr Requests\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -763,7 +763,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.visuallyCompleteTime) as \"Visually Complete\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
+      "query": "select AVG(useraction.visuallyCompleteTime) as \"Visually Complete\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -782,7 +782,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.speedIndex) as \"Speed Index\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
+      "query": "select AVG(useraction.speedIndex) as \"Speed Index\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -801,7 +801,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.visuallyCompleteTime) as \"Visually Complete\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select AVG(useraction.visuallyCompleteTime) as \"Visually Complete\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -820,7 +820,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.speedIndex) as \"Speed Index\" from usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
+      "query": "select AVG(useraction.speedIndex) as \"Speed Index\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -838,7 +838,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Visually Complete](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.visuallyCompleteTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.visuallyCompleteTime%20desc&visualization=TABLE)"
+      "markdown": "## [Visually Complete](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.visuallyCompleteTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.visuallyCompleteTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -854,7 +854,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Visually Complete](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.visuallyCompleteTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.visuallyCompleteTime%20desc&visualization=TABLE)"
+      "markdown": "## [Visually Complete](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.visuallyCompleteTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.visuallyCompleteTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -870,7 +870,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Speed Index](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.speedIndex%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.speedIndex%20desc&visualization=TABLE)"
+      "markdown": "## [Speed Index](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.speedIndex%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.speedIndex%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -886,7 +886,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Speed Index](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.speedIndex%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.speedIndex%20desc&visualization=TABLE)"
+      "markdown": "## [Speed Index](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.speedIndex%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.speedIndex%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -902,7 +902,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Server](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.serverTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.serverTime%20desc&visualization=TABLE)"
+      "markdown": "## [Server](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.serverTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.serverTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -918,7 +918,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Server](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.serverTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.serverTime%20desc&visualization=TABLE)"
+      "markdown": "## [Server](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.serverTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.serverTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -934,7 +934,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Network](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.networkTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.networkTime%20desc&visualization=TABLE)"
+      "markdown": "## [Network](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.networkTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.networkTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -950,7 +950,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Network](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.networkTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.networkTime%20desc&visualization=TABLE)"
+      "markdown": "## [Network](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.networkTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.networkTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -966,7 +966,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Request Start](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.requestStart%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.requestStart%20desc&visualization=TABLE)"
+      "markdown": "## [Request Start](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.requestStart%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.requestStart%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -982,7 +982,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Request Start](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.requestStart%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.requestStart%20desc&visualization=TABLE)"
+      "markdown": "## [Request Start](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.requestStart%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.requestStart%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -998,7 +998,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Load Event End](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.loadEventEnd%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.loadEventEnd%20desc&visualization=TABLE)"
+      "markdown": "## [Load Event End](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.loadEventEnd%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.loadEventEnd%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1014,7 +1014,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Load Event End](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.loadEventEnd%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.loadEventEnd%20desc&visualization=TABLE)"
+      "markdown": "## [Load Event End](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.loadEventEnd%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.loadEventEnd%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1030,7 +1030,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [DOM Interactive](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.documentInteractiveTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.documentInteractiveTime%20desc&visualization=TABLE)"
+      "markdown": "## [DOM Interactive](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.documentInteractiveTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20useraction.documentInteractiveTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1046,7 +1046,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [DOM Interactive](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.documentInteractiveTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.documentInteractiveTime%20desc&visualization=TABLE)"
+      "markdown": "## [DOM Interactive](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.documentInteractiveTime%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20useraction.documentInteractiveTime%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1062,7 +1062,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [HTTP Errors](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.httpRequestsWithErrors%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and%20useraction.httpRequestsWithErrors%3E0%20order%20by%20useraction.httpRequestsWithErrors%20DESC&visualization=TABLE)"
+      "markdown": "## [HTTP Errors](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.httpRequestsWithErrors%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and%20useraction.httpRequestsWithErrors%3E0%20order%20by%20useraction.httpRequestsWithErrors%20DESC&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1078,7 +1078,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Failed Images](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedImages%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20and%20useraction.failedImages%3E0%20order%20by%20useraction.failedImages%20desc&visualization=TABLE)"
+      "markdown": "## [Failed Images](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedImages%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20and%20useraction.failedImages%3E0%20order%20by%20useraction.failedImages%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1094,7 +1094,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Failed Images](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedImages%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and%20useraction.failedImages%3E0%20order%20by%20useraction.failedImages%20DESC&visualization=TABLE)"
+      "markdown": "## [Failed Images](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedImages%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and%20useraction.failedImages%3E0%20order%20by%20useraction.failedImages%20DESC&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1110,7 +1110,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Failed Xhr Requests](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedXhrRequests%20from%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and%20useraction.failedXhrRequests%3E0%20order%20by%20useraction.failedXhrRequests%20DESC&visualization=TABLE)"
+      "markdown": "## [Failed Xhr Requests](${url}/ui/user-sessions/query?sessionquery=select%20userid,useraction.failedXhrRequests%20from%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and%20useraction.failedXhrRequests%3E0%20order%20by%20useraction.failedXhrRequests%20DESC&visualization=TABLE)"
     },
     {
       "name": "Environment Breakdown",
@@ -1141,7 +1141,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests by Location](${url}/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests by Location](${url}/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1157,7 +1157,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests by Location](${url}/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests by Location](${url}/ui/user-sessions/query?sessionquery=select%20UserId,country,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20and%20country%21%3D%22synthetic%22%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "DTAQL",
@@ -1174,7 +1174,7 @@
         "managementZone": null
       },
       "customName": "City",
-      "query": "select count(usersessionid) as \"Requests\",City FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10} group by City",
+      "query": "select count(usersessionid) as \"Requests\",City FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and ${journey.where-10} group by City",
       "type": "PIE_CHART"
     },
     {
@@ -1192,7 +1192,7 @@
         "managementZone": null
       },
       "customName": "City",
-      "query": "select count(usersessionid) as \"Requests\",City FROM usersession where useraction.application=\"${app.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10} group by City",
+      "query": "select count(usersessionid) as \"Requests\",City FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-9} and not ${journey.where-10} group by City",
       "type": "PIE_CHART"
     },
     {
@@ -1209,7 +1209,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests by City](${url}/ui/user-sessions/query?sessionquery=select%20UserId,City,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests by City](${url}/ui/user-sessions/query?sessionquery=select%20UserId,City,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20${journey.where-10}%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
@@ -1225,7 +1225,7 @@
         "timeframe": null,
         "managementZone": null
       },
-      "markdown": "## [Requests by City](${url}/ui/user-sessions/query?sessionquery=select%20UserId,City,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20duration%20desc&visualization=TABLE)"
+      "markdown": "## [Requests by City](${url}/ui/user-sessions/query?sessionquery=select%20UserId,City,duration%20FROM%20usersession%20where%20useraction.application%20%3D%20%22${app-1.name}%22%20${uspClause}%20and%20${journey.where-9}%20and%20not%20${journey.where-10}%20order%20by%20duration%20desc&visualization=TABLE)"
     },
     {
       "name": "Markdown",
