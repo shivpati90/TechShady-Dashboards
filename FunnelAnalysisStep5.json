@@ -7,7 +7,7 @@
 	},
 	"id": "a7340848-3f03-4155-ac15-d8ea4a7da734",
 	"dashboardMetadata": {
-		"name": "\ud83c\udfaf ${UserJourneyName} Forensics - ${journey.header-5}",
+		"name": "${UserJourneyName} Forensics - ${journey.header-5}",
 		"shared": true,
 		"owner": "MyEmail",
 		"sharingDetails": {
@@ -18,7 +18,7 @@
 			"timeframe": "l_2_HOURS",
 			"managementZone": null
 		},
-    "tags": ["${app-1.name}","Forensics","User Journey"]
+    "tags": ["Forensics","User Journey"]
 	},
   "tiles": [
     {
@@ -36,7 +36,7 @@
         "managementZone": null
       },
       "customName": "Location",
-      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6} and country!=\"synthetic\" and country IS NOT NULL group by country",
+      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6} and country!=\"synthetic\" and country IS NOT NULL group by country",
       "type": "PIE_CHART"
     },
     {
@@ -54,7 +54,7 @@
         "managementZone": null
       },
       "customName": "Location",
-      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6} and country!=\"synthetic\" and country IS NOT NULL group by country",
+      "query": "select count(usersessionid) as \"Requests\",country FROM usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6} and country!=\"synthetic\" and country IS NOT NULL group by country",
       "type": "PIE_CHART"
     },
     {
@@ -104,7 +104,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6}",
+      "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -123,7 +123,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select AVG(useraction.duration) as \"Duration\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -174,7 +174,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6}",
+      "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -193,7 +193,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select sum(useraction.errorCount) as \"Errors\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -308,7 +308,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE21",
-      "query": "select sum(numberOfRageClicks) as \"Rages\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and  numberOfRageClicks>0 and ${journey.where-5} and ${journey.where-6}",
+      "query": "select sum(numberOfRageClicks) as \"Rages\" from usersession where useraction.application in (${app.name}) ${uspClause} and  numberOfRageClicks>0 and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -327,7 +327,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE21",
-      "query": "select sum(numberOfRageClicks) as \"Rages\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and  numberOfRageClicks>0 and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select sum(numberOfRageClicks) as \"Rages\" from usersession where useraction.application in (${app.name}) ${uspClause} and  numberOfRageClicks>0 and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -346,7 +346,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE34",
-      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and usersession.duration>180000 and ${journey.where-5} and ${journey.where-6} and userActionCount<10",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application in (${app.name}) ${uspClause} and usersession.duration>180000 and ${journey.where-5} and ${journey.where-6} and userActionCount<10",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -365,7 +365,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDE34",
-      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and usersession.duration>180000 and ${journey.where-5} and not ${journey.where-6} and userActionCount<10",
+      "query": "select count(usersessionid) as \"Sessions\" from usersession where useraction.application in (${app.name}) ${uspClause} and usersession.duration>180000 and ${journey.where-5} and not ${journey.where-6} and userActionCount<10",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -384,7 +384,7 @@
         "managementZone": null
       },
       "customName": "\ud83d\udc4d",
-      "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6}",
+      "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -403,7 +403,7 @@
         "managementZone": null
       },
       "customName": "\ud83d\udc4e",
-      "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select count(usersessionid) as \"Requests\" FROM usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -497,7 +497,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.serverTime) as \"Server\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6}",
+      "query": "select AVG(useraction.serverTime) as \"Server\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -516,7 +516,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.serverTime) as \"Server\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select AVG(useraction.serverTime) as \"Server\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -535,7 +535,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.networkTime) as \"Network\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6}",
+      "query": "select AVG(useraction.networkTime) as \"Network\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -554,7 +554,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.networkTime) as \"Network\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select AVG(useraction.networkTime) as \"Network\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -573,7 +573,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.requestStart) as \"Request Start\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6}",
+      "query": "select AVG(useraction.requestStart) as \"Request Start\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -592,7 +592,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.requestStart) as \"Request Start\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select AVG(useraction.requestStart) as \"Request Start\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -611,7 +611,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.loadEventEnd) as \"Load Event End\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6}",
+      "query": "select AVG(useraction.loadEventEnd) as \"Load Event End\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -630,7 +630,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.loadEventEnd) as \"Load Event End\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select AVG(useraction.loadEventEnd) as \"Load Event End\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -649,7 +649,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.documentInteractiveTime) as \"DOM Interactive\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6}",
+      "query": "select AVG(useraction.documentInteractiveTime) as \"DOM Interactive\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -668,7 +668,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.documentInteractiveTime) as \"DOM Interactive\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select AVG(useraction.documentInteractiveTime) as \"DOM Interactive\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -687,7 +687,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.httpRequestsWithErrors) as \"HTTP Errors\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select sum(useraction.httpRequestsWithErrors) as \"HTTP Errors\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -706,7 +706,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.failedImages) as \"Failed Images\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6}",
+      "query": "select sum(useraction.failedImages) as \"Failed Images\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -725,7 +725,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.failedImages) as \"Failed Images\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select sum(useraction.failedImages) as \"Failed Images\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -744,7 +744,7 @@
         "managementZone": null
       },
       "customName": "\uD83D\uDEA8",
-      "query": "select sum(useraction.failedXhrRequests) as \"Failed Xhr Requests\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select sum(useraction.failedXhrRequests) as \"Failed Xhr Requests\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -763,7 +763,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.visuallyCompleteTime) as \"Visually Complete\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6}",
+      "query": "select AVG(useraction.visuallyCompleteTime) as \"Visually Complete\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -782,7 +782,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.speedIndex) as \"Speed Index\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6}",
+      "query": "select AVG(useraction.speedIndex) as \"Speed Index\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -801,7 +801,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.visuallyCompleteTime) as \"Visually Complete\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select AVG(useraction.visuallyCompleteTime) as \"Visually Complete\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -820,7 +820,7 @@
         "managementZone": null
       },
       "customName": "\u23F1",
-      "query": "select AVG(useraction.speedIndex) as \"Speed Index\" from usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
+      "query": "select AVG(useraction.speedIndex) as \"Speed Index\" from usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6}",
       "type": "SINGLE_VALUE",
       "timeFrameShift": "dynamic"
     },
@@ -1174,7 +1174,7 @@
         "managementZone": null
       },
       "customName": "City",
-      "query": "select count(usersessionid) as \"Requests\",City FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and ${journey.where-6} group by City",
+      "query": "select count(usersessionid) as \"Requests\",City FROM usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and ${journey.where-6} group by City",
       "type": "PIE_CHART"
     },
     {
@@ -1192,7 +1192,7 @@
         "managementZone": null
       },
       "customName": "City",
-      "query": "select count(usersessionid) as \"Requests\",City FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-5} and not ${journey.where-6} group by City",
+      "query": "select count(usersessionid) as \"Requests\",City FROM usersession where useraction.application in (${app.name}) ${uspClause} and ${journey.where-5} and not ${journey.where-6} group by City",
       "type": "PIE_CHART"
     },
     {

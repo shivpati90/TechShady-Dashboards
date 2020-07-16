@@ -5,7 +5,7 @@
     },
     "id": "65312f05-ca6c-4896-b2b4-1bc8ce3da734",
     "dashboardMetadata": {
-        "name": "\uD83D\uDED2 ${UserJourneyName} User Journey",
+        "name": "\${UserJourneyName} User Journey",
         "shared": true,
         "owner": "MyEmail",
         "sharingDetails": {
@@ -29,7 +29,7 @@
         },
         "tileFilter": {},
         "customName": "${journey.header-1}",
-        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"${app-1.name}\" ${regionClause} ${uspClause} and ${journey.where-1} and not ${journey.where-2}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1} and not ${journey.where-2}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -112,7 +112,7 @@
         },
         "tileFilter": {},
         "customName": "${journey.header-1}",
-        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"${app-1.name}\" ${regionClause} ${uspClause} and ${journey.where-1}",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -127,7 +127,7 @@
         },
         "tileFilter": {},
         "customName": "${journey.header-1}",
-        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"${app-1.name}\" ${regionClause} ${uspClause} and ${journey.where-1}",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -154,7 +154,7 @@
         },
         "tileFilter": {},
         "customName": "${journey.header-2}",
-        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application=\"${app-1.name}\" ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and not ${journey.where-3}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and not ${journey.where-3}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -184,7 +184,7 @@
         },
         "tileFilter": {},
         "customName": "${journey.header-2}",
-        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"${app-1.name}\" ${regionClause} ${uspClause} and ${journey.where-2} ",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-2} ",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -199,7 +199,7 @@
         },
         "tileFilter": {},
         "customName": "${journey.header-3}",
-        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application=\"${app-1.name}\" ${regionClause} ${uspClause} and ${journey.where-3}",
+        "query": "select avg(useraction.duration) as \"Duration\" from useraction where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-3}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -214,7 +214,7 @@
         },
         "tileFilter": {},
         "customName": "${journey.header-2}",
-        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"${app-1.name}\" ${regionClause} ${uspClause} and ${journey.where-2}",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-2}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -229,7 +229,7 @@
         },
         "tileFilter": {},
         "customName": "${journey.header-3}",
-        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application=\"${app-1.name}\" ${regionClause} ${uspClause} and ${journey.where-3}",
+        "query": "select sum(useraction.errorCount) as \"Errors\" from useraction where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-3}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -256,7 +256,7 @@
         },
         "tileFilter": {},
         "customName": "${UserJourneyName} User Journey",
-        "query": "SELECT FUNNEL(${journey.funnel}) FROM usersession where useraction.application=\"${app-1.name}\" ${regionClause} ${uspClause}",
+        "query": "SELECT FUNNEL(${journey.funnel}) FROM usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause}",
         "type": "FUNNEL",
         "timeFrameShift": "dynamic",
         "limit": 50
