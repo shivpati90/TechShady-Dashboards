@@ -33,7 +33,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and userExperienceScore=\"SATISFIED\" and ${journey.where-last}	",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and userExperienceScore=\"SATISFIED\" and ${journey.where-last}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -48,7 +48,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and userExperienceScore=\"TOLERATED\" and ${journey.where-last}	",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and userExperienceScore=\"TOLERATED\" and ${journey.where-last}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -63,7 +63,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and userExperienceScore=\"FRUSTRATED\" and ${journey.where-last}	",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and userExperienceScore=\"FRUSTRATED\" and ${journey.where-last}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -136,7 +136,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and ${journey.where-last}	",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and ${journey.where-last}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -238,7 +238,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "SELECT browserFamily, count(userSessionId) FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and ${journey.where-last}	   group by browserFamily order by count(userSessionId) desc",
+        "query": "SELECT browserFamily, count(userSessionId) FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and ${journey.where-last} group by browserFamily order by count(userSessionId) desc",
         "type": "PIE_CHART",
         "limit": 50
     }, {
@@ -253,7 +253,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "SELECT City, count(userSessionId) FROM usersession where useraction.application in (\"www.angular.easytravel.com\")  and ${journey.where-last}	   group by City order by count(userSessionId) desc",
+        "query": "SELECT City, count(userSessionId) FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and ${journey.where-last} group by City order by count(userSessionId) desc",
         "type": "PIE_CHART",
         "limit": 50
     }]
