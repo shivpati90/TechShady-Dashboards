@@ -7,7 +7,7 @@
 	},
 	"id": "0d81ee7c-f7ba-4626-a087-60b76ecda734",
 	"dashboardMetadata": {
-		"name": "\ud83c\udfc1 ${UserJourneyName} Conversion Analysis",
+		"name": "${UserJourneyName} Conversion Analysis",
 		"shared": true,
 		"owner": "MyEmail",
 		"sharingDetails": {
@@ -18,495 +18,243 @@
 			"timeframe": "l_2_HOURS",
 			"managementZone": null
 		},
-    "tags": ["${app-1.name}","Analysis"]
+    "tags": ["Analysis"]
 
 	},
-	"tiles": [
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 38,
-				"left": 988,
-				"width": 190,
-				"height": 152
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\uD83D\uDE0A",
-			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"SATISFIED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
-			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 38,
-				"left": 1178,
-				"width": 190,
-				"height": 152
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\uD83D\uDE1F",
-			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"TOLERATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
-			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 38,
-				"left": 1368,
-				"width": 190,
-				"height": 152
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\uD83D\uDE22",
-			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"FRUSTRATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
-			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
-		},
-		{
-			"name": "User Sessions Query",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 228,
-				"left": 0,
-				"width": 760,
-				"height": 304
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\uD83C\uDFC1",
-			"query": "select DISTINCT DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-last} ",
-			"type": "LINE_CHART"
-		},
-		{
-			"name": "Revenue Over Time",
-			"tileType": "HEADER",
-			"configured": true,
-			"bounds": {
-				"top": 190,
-				"left": 0,
-				"width": 304,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			}
-		},
-    {
-      "name": "Markdown",
-      "tileType": "MARKDOWN",
-      "configured": true,
-      "bounds": {
-    "top": 0,
-    "left": 1634,
-    "width": 38,
-    "height": 38
-      },
-      "tileFilter": {
-        "timeframe": null,
-        "managementZone": null
-      },
-      "markdown": "![BackButton]()"
-		},
-		{
-			"name": "Markdown",
-			"tileType": "MARKDOWN",
-			"configured": true,
-			"bounds": {
-				"top": 0,
-				"left": 190,
-				"width": 152,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"markdown": "## [Satisfied](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22,%20${uspRevenue.id}%20as%20%22Revenue%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22SATISFIED%22%20${uspClause}%20${uspClause}%20and%20${journey.where-last}%20and%0A%09${uspRevenue.id}%3E0%20order%20by%20${uspRevenue.id}%20desc%0A&visualization=TABLE)"
-		},
-		{
-			"name": "Markdown",
-			"tileType": "MARKDOWN",
-			"configured": true,
-			"bounds": {
-				"top": 0,
-				"left": 380,
-				"width": 152,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"markdown": "## [Tolerated](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22,%20${uspRevenue.id}%20as%20%22Revenue%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22TOLERATED%22%20${uspClause}%20and%20${journey.where-last}%20and%0A%09${uspRevenue.id}%3E0%20order%20by%20${uspRevenue.id}%20desc%0A&visualization=TABLE)"
-		},
-		{
-			"name": "Markdown",
-			"tileType": "MARKDOWN",
-			"configured": true,
-			"bounds": {
-				"top": 0,
-				"left": 570,
-				"width": 152,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"markdown": "## [Frustrated](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22,%20${uspRevenue.id}%20as%20%22Revenue%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22FRUSTRATED%22%20${uspClause}%20and%20${journey.where-last}%20and%0A%09${uspRevenue.id}%3E0%20order%20by%20${uspRevenue.id}%20desc%0A&visualization=TABLE)"
-		},
-		{
-			"name": "Markdown",
-			"tileType": "MARKDOWN",
-			"configured": true,
-			"bounds": {
-				"top": 0,
-				"left": 988,
-				"width": 152,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"markdown": "## [Satisfied](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22,%20${uspRevenue.id}%20as%20%22Revenue%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22SATISFIED%22%20${uspClause}%20${uspClause}%20and%20${journey.where-last}%20and%0A%09${uspRevenue.id}%3E0%20order%20by%20${uspRevenue.id}%20desc%0A&visualization=TABLE)"
-		},
-		{
-			"name": "Markdown",
-			"tileType": "MARKDOWN",
-			"configured": true,
-			"bounds": {
-				"top": 0,
-				"left": 1178,
-				"width": 152,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"markdown": "## [Tolerated](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22,%20${uspRevenue.id}%20as%20%22Revenue%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22TOLERATED%22%20${uspClause}%20and%20${journey.where-last}%20and%0A%09${uspRevenue.id}%3E0%20order%20by%20${uspRevenue.id}%20desc%0A&visualization=TABLE)"
-		},
-		{
-			"name": "Markdown",
-			"tileType": "MARKDOWN",
-			"configured": true,
-			"bounds": {
-				"top": 0,
-				"left": 1368,
-				"width": 152,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"markdown": "## [Frustrated](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22,%20${uspRevenue.id}%20as%20%22Revenue%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22FRUSTRATED%22%20${uspClause}%20and%20${journey.where-last}%20and%0A%09${uspRevenue.id}%3E0%20order%20by%20${uspRevenue.id}%20desc%0A&visualization=TABLE)"
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 228,
-				"left": 798,
-				"width": 760,
-				"height": 304
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\ud83c\udfc1",
-			"query": "select distinct DATETIME(starttime, \"HH:mm\", \"10m\") as \"Time\", count(userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\t${journey.where-last} and\n\t${uspRevenue.id}>0\n",
-			"type": "LINE_CHART"
-		},
-		{
-			"name": "Conversions Over Time",
-			"tileType": "HEADER",
-			"configured": true,
-			"bounds": {
-				"top": 190,
-				"left": 798,
-				"width": 304,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			}
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 38,
-				"left": 190,
-				"width": 190,
-				"height": 152
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"SATISFIED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
-			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 38,
-				"left": 380,
-				"width": 190,
-				"height": 152
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"TOLERATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
-			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 38,
-				"left": 570,
-				"width": 190,
-				"height": 152
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\tuserExperienceScore=\"FRUSTRATED\" and ${journey.where-last} and\n\t${uspRevenue.id}>0\n",
-			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 570,
-				"left": 380,
-				"width": 380,
-				"height": 266
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\ud83d\udcb0",
-			"query": "SELECT City, sum(${uspRevenue.id}) FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-last}   group by City order by sum(${uspRevenue.id}) desc",
-			"type": "PIE_CHART"
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 570,
-				"left": 798,
-				"width": 380,
-				"height": 266
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\ud83c\udfc1",
-			"query": "SELECT userExperienceScore, count(userSessionId) FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-last} group by userExperienceScore order by count(userSessionId) desc",
-			"type": "PIE_CHART"
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 570,
-				"left": 1178,
-				"width": 380,
-				"height": 266
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\ud83c\udfc1",
-			"query": "SELECT City, count(userSessionId) FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-last}   group by City order by count(userSessionId) desc",
-			"type": "PIE_CHART"
-		},
-		{
-			"name": "Conversions by User Experience",
-			"tileType": "HEADER",
-			"configured": true,
-			"bounds": {
-				"top": 532,
-				"left": 798,
-				"width": 380,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			}
-		},
-		{
-			"name": "Conversions by City",
-			"tileType": "HEADER",
-			"configured": true,
-			"bounds": {
-				"top": 532,
-				"left": 1178,
-				"width": 304,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			}
-		},
-		{
-			"name": "Revenue by User Experience",
-			"tileType": "HEADER",
-			"configured": true,
-			"bounds": {
-				"top": 532,
-				"left": 0,
-				"width": 380,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			}
-		},
-		{
-			"name": "Revenue by City",
-			"tileType": "HEADER",
-			"configured": true,
-			"bounds": {
-				"top": 532,
-				"left": 380,
-				"width": 304,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			}
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 570,
-				"left": 0,
-				"width": 380,
-				"height": 266
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\ud83d\udcb0",
-			"query": "SELECT userExperienceScore, sum(${uspRevenue.id}) FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and ${journey.where-last} group by userExperienceScore order by sum(${uspRevenue.id}) desc",
-			"type": "PIE_CHART"
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 38,
-				"left": 0,
-				"width": 190,
-				"height": 152
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\ud83d\udcb0",
-			"query": "select sum(${uspRevenue.id}) as \"Revenue\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\t${journey.where-last} and\n\t${uspRevenue.id}>0\n",
-			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
-		},
-		{
-			"name": "DTAQL",
-			"tileType": "DTAQL",
-			"configured": true,
-			"bounds": {
-				"top": 38,
-				"left": 798,
-				"width": 190,
-				"height": 152
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"customName": "\ud83c\udfc1",
-			"query": "select count(distinct userSessionId) as \"Conversions\" FROM usersession where useraction.application=\"${app-1.name}\" ${uspClause} and\n\t${journey.where-last} and\n\t${uspRevenue.id}>0\n",
-			"type": "SINGLE_VALUE", "timeFrameShift": "dynamic"
-		},
-		{
-			"name": "Markdown",
-			"tileType": "MARKDOWN",
-			"configured": true,
-			"bounds": {
-				"top": 0,
-				"left": 798,
-				"width": 190,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"markdown": "## [Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22,%20${uspRevenue.id}%20as%20%22Revenue%22%20FROM%20usersession%20where%0A%09${journey.where-last}%20${uspClause}%20and%0A%09${uspRevenue.id}%3E0%20order%20by%20${uspRevenue.id}%20desc%0A&visualization=TABLE)"
-		},
-		{
-			"name": "Markdown",
-			"tileType": "MARKDOWN",
-			"configured": true,
-			"bounds": {
-				"top": 0,
-				"left": 0,
-				"width": 190,
-				"height": 38
-			},
-			"tileFilter": {
-				"timeframe": null,
-				"managementZone": null
-			},
-			"markdown": "## [Revenue](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22,%20${uspRevenue.id}%20as%20%22Revenue%22%20FROM%20usersession%20where%0A%09${journey.where-last}%20${uspClause}%20and%0A%09${uspRevenue.id}%3E0%20order%20by%20${uspRevenue.id}%20desc%0A&visualization=TABLE)"
-		}
-	]
+    "tiles": [{
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 874,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and userExperienceScore=\"SATISFIED\" and ${journey.where-last}	",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 228,
+            "left": 494,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and userExperienceScore=\"TOLERATED\" and ${journey.where-last}	",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 228,
+            "left": 874,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and userExperienceScore=\"FRUSTRATED\" and ${journey.where-last}	",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 874,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [Satisfied Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22SATISFIED%22%20%20%20and%20(useraction.name%3D%22${journey.where-last})%20%0A&visualization=TABLE)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 494,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [Tolerated Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22TOLERATED%22%20%20and%20(useraction.name%3D%22${journey.where-last})%20%0A&visualization=TABLE)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 874,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [Frustrated Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22FRUSTRATED%22%20%20and%20(useraction.name%3D%22${journey.where-last})%20%0A&visualization=TABLE)"
+    }, {
+        "name": "Conversions Over Time",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 0,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Conversions by City",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 494,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(distinct userSessionId) as \" \" FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and ${journey.where-last}	",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 494,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [Overall Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09(useraction.name%3D%22${journey.where-last})%20%20%0A&visualization=TABLE)"
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 380,
+            "left": 0,
+            "width": 1672,
+            "height": 418
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": " ",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:apps.web.action.count.load.browser",
+                    "aggregation": "NONE",
+                    "type": "AREA",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application_method",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": false,
+                    "aggregationRate": "TOTAL"
+                }, {
+                    "metric": "builtin:apps.web.action.count.xhr.browser",
+                    "aggregation": "NONE",
+                    "type": "AREA",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application_method",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "${method.id}¦APPLICATION_METHOD»${method.id}»truebuiltin:apps.web.action.count.load.browser|NONE|TOTAL|AREA|APPLICATION_METHOD": {
+                        "lastModified": 1595003041958,
+                        "customColor": "#39ff14"
+                    },
+                    "${method.id}¦APPLICATION_METHOD»${method.id}»truebuiltin:apps.web.action.count.xhr.browser|NONE|TOTAL|AREA|APPLICATION_METHOD": {
+                        "lastModified": 1594998887772,
+                        "customColor": "#39ff14"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION_METHOD": {
+                    "SPECIFIC_ENTITIES": ["${method.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Conversions by Browser",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1216,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 1216,
+            "width": 456,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "SELECT browserFamily, count(userSessionId) FROM usersession where useraction.application in (${app.name}) ${uspClause} ${regionClause} and ${journey.where-last}	   group by browserFamily order by count(userSessionId) desc",
+        "type": "PIE_CHART",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 456,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "SELECT City, count(userSessionId) FROM usersession where useraction.application in (\"www.angular.easytravel.com\")  and ${journey.where-last}	   group by City order by count(userSessionId) desc",
+        "type": "PIE_CHART",
+        "limit": 50
+    }]
 }
