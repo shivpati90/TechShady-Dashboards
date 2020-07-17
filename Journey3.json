@@ -15,7 +15,7 @@
         "dashboardFilter": {
             "timeframe": "l_2_HOURS"
         },
-        "tags": ["${UserJourneyName}", "${app-1.name}", "User Journey"]
+        "tags": ["${UserJourneyName}", "${app.name}", "User Journey"]
     },
     "tiles": [{
         "name": "DTAQL",
