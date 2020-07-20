@@ -15,7 +15,7 @@
         "dashboardFilter": {
             "timeframe": "l_2_HOURS"
         },
-        "tags": [${app.name},"${UserJourneyName}", "${app.name}", "User Journey"]
+        "tags": ["${UserJourneyName}", "${app.name}", "User Journey"]
     },
     "tiles": [{
         "name": "User Sessions Query",
