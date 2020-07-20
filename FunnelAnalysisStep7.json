@@ -18,7 +18,7 @@
 			"timeframe": "l_2_HOURS",
 			"managementZone": null
 		},
-    "tags": ["Forensics","User Journey"]
+    "tags": [${app.name},"Forensics","User Journey"]
 	},
   "tiles": [
     {

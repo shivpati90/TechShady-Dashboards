@@ -18,7 +18,7 @@
 			"timeframe": "l_2_HOURS",
 			"managementZone": null
 		},
-    "tags": ["Analysis"]
+    "tags": [${app.name},"Analysis"]
 
 	},
     "tiles": [{

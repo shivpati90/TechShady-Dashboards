@@ -18,7 +18,7 @@
   "timeframe": "l_2_HOURS",
   "managementZone": null
  },
-    "tags": ["${UserJourneyName}","${app.name}","User Journey"]
+    "tags": [${app.name},"${UserJourneyName}","${app.name}","User Journey"]
  },
     "tiles": [{
         "name": "DTAQL",
