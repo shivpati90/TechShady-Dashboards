@@ -54,7 +54,7 @@
             },
             "filtersPerEntityType": {
                 "APPLICATION_METHOD": {
-                    "SPECIFIC_ENTITIES": [${method.id}]
+                    "SPECIFIC_ENTITIES": ["${method.id}"]
                 }
             }
         }
@@ -95,7 +95,7 @@
             },
             "filtersPerEntityType": {
                 "APPLICATION_METHOD": {
-                    "SPECIFIC_ENTITIES": [${method.id}]
+                    "SPECIFIC_ENTITIES": ["${method.id}"]
                 }
             }
         }
@@ -141,7 +141,7 @@
             },
             "filtersPerEntityType": {
                 "APPLICATION_METHOD": {
-                    "SPECIFIC_ENTITIES": [${method.id}]
+                    "SPECIFIC_ENTITIES": ["${method.id}"]
                 }
             }
         }
