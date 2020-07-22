@@ -168,6 +168,17 @@
         },
         "tileFilter": {}
     }, {
+        "name": "Apdex",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
         "name": "DTAQL",
         "tileType": "DTAQL",
         "configured": true,
