@@ -146,30 +146,6 @@
             }
         }
     }, {
-        "name": "Markdown",
-        "tileType": "MARKDOWN",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 152,
-            "width": 228,
-            "height": 38
-        },
-        "tileFilter": {},
-        "markdown": "## [${journey.header-1}](#dashboard;id=1fc1af04-a855-43cb-855c-c32f4ecda734)"
-    }, {
-        "name": "Markdown",
-        "tileType": "MARKDOWN",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 608,
-            "width": 228,
-            "height": 38
-        },
-        "tileFilter": {},
-        "markdown": "## [${journey.header-3}](#dashboard;id=0d81ee7c-f7ba-4626-a087-60b76ecda734)"
-    }, {
         "name": "Sessions",
         "tileType": "HEADER",
         "configured": true,
@@ -242,12 +218,36 @@
         "configured": true,
         "bounds": {
             "top": 0,
+            "left": 152,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-1}](#dashboard;id=1fc1af04-a855-43cb-855c-c32f4ecda734)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
             "left": 456,
             "width": 228,
             "height": 38
         },
         "tileFilter": {},
         "markdown": "## [${journey.header-2}](#dashboard;id=2662ddb8-dd6a-4345-a1bc-7ff069eda734)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 684,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-3}](#dashboard;id=0d81ee7c-f7ba-4626-a087-60b76ecda734)"
     }, {
         "name": "User Sessions Query",
         "tileType": "DTAQL",
