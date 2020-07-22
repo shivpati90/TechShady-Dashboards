@@ -486,14 +486,14 @@
         "query": "select 0 as \"Abandons\" from usersession limit 1",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
-}, {
+    }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
         "configured": true,
         "bounds": {
             "top": 0,
             "left": 152,
-            "width": 228,
+            "width": 304,
             "height": 38
         },
         "tileFilter": {},
@@ -504,36 +504,84 @@
         "configured": true,
         "bounds": {
             "top": 0,
+            "left": 456,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-2}](#dashboard;id=2662ddb8-dd6a-4345-a1bc-7ff069eda734)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 760,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-3}](#dashboard;id=10a69069-74c2-4eba-b18a-6856d91da734)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
             "left": 1064,
-            "width": 228,
+            "width": 304,
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [${journey.header-5}](#dashboard;id=a7340848-3f03-4155-ac15-d8ea4a7da734)"
+        "markdown": "## [${journey.header-4}](#dashboard;id=0d81ee7c-f7ba-4626-a087-60b76ecda734)"
     }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
         "configured": true,
         "bounds": {
             "top": 0,
-            "left": 836,
-            "width": 228,
+            "left": 1368,
+            "width": 304,
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [${journey.header-4}](#dashboard;id=7f64e3ef-239c-416a-b3a4-66b99beda734)"
+        "markdown": "## [${journey.header-5}](#dashboard;id=0d81ee7c-f7ba-4626-a087-60b76ecda734)"
     }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
         "configured": true,
         "bounds": {
             "top": 0,
-            "left": 1292,
-            "width": 228,
+            "left": 1672,
+            "width": 304,
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [${journey.header-6}](#dashboard;id=a7340848-3f03-4155-ac06-d8ea4a7da734)"
+        "markdown": "## [${journey.header-6}](#dashboard;id=0d81ee7c-f7ba-4626-a087-60b76ecda734)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1976,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-7}](#dashboard;id=0d81ee7c-f7ba-4626-a087-60b76ecda734)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 2280,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [${journey.header-8}](#dashboard;id=0d81ee7c-f7ba-4626-a087-60b76ecda734)"
     }, {
         "name": "Sessions",
         "tileType": "HEADER",
@@ -567,53 +615,5 @@
             "height": 38
         },
         "tileFilter": {}
-    }, {
-        "name": "Markdown",
-        "tileType": "MARKDOWN",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 380,
-            "width": 228,
-            "height": 38
-        },
-        "tileFilter": {},
-        "markdown": "## [${journey.header-2}](#dashboard;id=2662ddb8-dd6a-4345-a1bc-7ff069eda734)"
-    }, {
-        "name": "Markdown",
-        "tileType": "MARKDOWN",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 608,
-            "width": 228,
-            "height": 38
-        },
-        "tileFilter": {},
-        "markdown": "## [${journey.header-3}](#dashboard;id=10a69069-74c2-4eba-b18a-6856d91da734)"
-    }, {
-        "name": "Markdown",
-        "tileType": "MARKDOWN",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 1748,
-            "width": 228,
-            "height": 38
-        },
-        "tileFilter": {},
-        "markdown": "## [${journey.header-8}](#dashboard;id=0d81ee7c-f7ba-4626-a087-60b76ecda734)"
-    }, {
-        "name": "Markdown",
-        "tileType": "MARKDOWN",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 1520,
-            "width": 228,
-            "height": 38
-        },
-        "tileFilter": {},
-        "markdown": "## [${journey.header-7}](#dashboard;id=a7340848-3f03-4155-ac07-d8ea4a7da734)"
     }]
 }
