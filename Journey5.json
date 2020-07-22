@@ -23,9 +23,9 @@
         "configured": true,
         "bounds": {
             "top": 38,
-            "left": 266,
-            "width": 1140,
-            "height": 266
+            "left": 152,
+            "width": 1520,
+            "height": 304
         },
         "tileFilter": {},
         "customName": "${UserJourneyName} User Journey",
@@ -38,9 +38,9 @@
         "tileType": "DTAQL",
         "configured": true,
         "bounds": {
-            "top": 304,
-            "left": 266,
-            "width": 228,
+            "top": 342,
+            "left": 152,
+            "width": 304,
             "height": 152
         },
         "tileFilter": {},
@@ -53,9 +53,39 @@
         "tileType": "DTAQL",
         "configured": true,
         "bounds": {
-            "top": 304,
-            "left": 950,
-            "width": 228,
+            "top": 342,
+            "left": 456,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-2}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and not ${journey.where-3}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 760,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-3}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and ${journey.where-3} and not ${journey.where-4}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 1064,
+            "width": 304,
             "height": 152
         },
         "tileFilter": {},
@@ -68,9 +98,9 @@
         "tileType": "DTAQL",
         "configured": true,
         "bounds": {
-            "top": 304,
-            "left": 1178,
-            "width": 228,
+            "top": 342,
+            "left": 1368,
+            "width": 304,
             "height": 152
         },
         "tileFilter": {},
@@ -120,7 +150,7 @@
         "configured": true,
         "bounds": {
             "top": 152,
-            "left": 114,
+            "left": 0,
             "width": 152,
             "height": 38
         },
@@ -130,42 +160,23 @@
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
-            "top": 342,
-            "left": 114,
+            "top": 380,
+            "left": 0,
             "width": 152,
             "height": 38
         },
         "tileFilter": {}
     }, {
-        "name": "DTAQL",
-        "tileType": "DTAQL",
+        "name": "Apdex",
+        "tileType": "HEADER",
         "configured": true,
         "bounds": {
-            "top": 304,
-            "left": 494,
-            "width": 228,
-            "height": 152
+            "top": 570,
+            "left": 0,
+            "width": 152,
+            "height": 38
         },
-        "tileFilter": {},
-        "customName": "${journey.header-2}",
-        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and not ${journey.where-3}",
-        "type": "SINGLE_VALUE",
-        "timeFrameShift": "dynamic"
-    }, {
-        "name": "DTAQL",
-        "tileType": "DTAQL",
-        "configured": true,
-        "bounds": {
-            "top": 304,
-            "left": 722,
-            "width": 228,
-            "height": 152
-        },
-        "tileFilter": {},
-        "customName": "${journey.header-3}",
-        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and ${journey.where-3} and not ${journey.where-4}",
-        "type": "SINGLE_VALUE",
-        "timeFrameShift": "dynamic"
+        "tileFilter": {}
     }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
