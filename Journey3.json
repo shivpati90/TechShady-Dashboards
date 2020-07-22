@@ -5,7 +5,7 @@
     },
     "id": "65312f05-ca6c-4896-b2b4-1bc8ce3da734",
     "dashboardMetadata": {
-        "name": "${UserJourneyName} User Journey ",
+        "name": "${UserJourneyName} User Journey",
         "shared": true,
         "owner": "MyEmail",
         "sharingDetails": {
@@ -152,7 +152,7 @@
         "bounds": {
             "top": 304,
             "left": 152,
-            "width": 228,
+            "width": 304,
             "height": 152
         },
         "tileFilter": {},
@@ -212,8 +212,8 @@
         "configured": true,
         "bounds": {
             "top": 304,
-            "left": 380,
-            "width": 228,
+            "left": 456,
+            "width": 304,
             "height": 152
         },
         "tileFilter": {},
@@ -227,8 +227,8 @@
         "configured": true,
         "bounds": {
             "top": 304,
-            "left": 950,
-            "width": 228,
+            "left": 722,
+            "width": 304,
             "height": 152
         },
         "tileFilter": {},
