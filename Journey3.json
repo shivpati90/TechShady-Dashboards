@@ -146,21 +146,6 @@
             }
         }
     }, {
-        "name": "DTAQL",
-        "tileType": "DTAQL",
-        "configured": true,
-        "bounds": {
-            "top": 304,
-            "left": 152,
-            "width": 304,
-            "height": 152
-        },
-        "tileFilter": {},
-        "customName": "${journey.header-1}",
-        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1} and not ${journey.where-2}",
-        "type": "SINGLE_VALUE",
-        "timeFrameShift": "dynamic"
-    }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
         "configured": true,
@@ -212,6 +197,21 @@
         "configured": true,
         "bounds": {
             "top": 304,
+            "left": 152,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-1}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1} and not ${journey.where-2}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 304,
             "left": 456,
             "width": 304,
             "height": 152
@@ -227,7 +227,7 @@
         "configured": true,
         "bounds": {
             "top": 304,
-            "left": 722,
+            "left": 760,
             "width": 304,
             "height": 152
         },
