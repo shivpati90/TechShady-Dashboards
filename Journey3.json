@@ -179,7 +179,7 @@
         },
         "tileFilter": {},
         "customName": "${journey.header-1}",
-        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1} and not ${journey.where-2}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (\"${app.name}\") ${regionClause} ${uspClause} and ${journey.where-1} and not ${journey.where-2}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -194,7 +194,7 @@
         },
         "tileFilter": {},
         "customName": "${journey.header-2}",
-        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and not ${journey.where-3}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (\"${app.name}\") ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and not ${journey.where-3}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -260,7 +260,7 @@
         },
         "tileFilter": {},
         "customName": "${UserJourneyName} User Journey",
-        "query": "SELECT FUNNEL(${journey.funnel}) FROM usersession where useraction.application in (${app.name}) ${regionClause} ${uspClause}",
+        "query": "SELECT FUNNEL(${journey.funnel}) FROM usersession where useraction.application in (\"${app.name}\") ${regionClause} ${uspClause}",
         "type": "FUNNEL",
         "timeFrameShift": "dynamic",
         "limit": 50
