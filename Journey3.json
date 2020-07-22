@@ -190,7 +190,7 @@
         "configured": true,
         "bounds": {
             "top": 152,
-            "left": 342,
+            "left": 0,
             "width": 152,
             "height": 38
         },
@@ -200,8 +200,8 @@
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
-            "top": 342,
-            "left": 342,
+            "top": 380,
+            "left": 0,
             "width": 152,
             "height": 38
         },
