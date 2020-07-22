@@ -194,9 +194,9 @@
         "tileType": "DTAQL",
         "configured": true,
         "bounds": {
-            "top": 304,
-            "left": 380,
-            "width": 228,
+            "top": 342,
+            "left": 152,
+            "width": 304,
             "height": 152
         },
         "tileFilter": {},
@@ -209,9 +209,39 @@
         "tileType": "DTAQL",
         "configured": true,
         "bounds": {
-            "top": 304,
+            "top": 342,
+            "left": 456,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-2}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (\"${app.name}\") ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and not ${journey.where-3}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 760,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${journey.header-3}",
+        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (\"${app.name}\") ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and ${journey.where-3} and not ${journey.where-4}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 342,
             "left": 1064,
-            "width": 228,
+            "width": 304,
             "height": 152
         },
         "tileFilter": {},
@@ -249,7 +279,7 @@
         "configured": true,
         "bounds": {
             "top": 152,
-            "left": 228,
+            "left": 0,
             "width": 152,
             "height": 38
         },
@@ -259,42 +289,23 @@
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
-            "top": 342,
-            "left": 228,
+            "top": 380,
+            "left": 0,
             "width": 152,
             "height": 38
         },
         "tileFilter": {}
     }, {
-        "name": "DTAQL",
-        "tileType": "DTAQL",
+        "name": "Apdex",
+        "tileType": "HEADER",
         "configured": true,
         "bounds": {
-            "top": 304,
-            "left": 608,
-            "width": 228,
-            "height": 152
+            "top": 570,
+            "left": 0,
+            "width": 152,
+            "height": 38
         },
-        "tileFilter": {},
-        "customName": "${journey.header-2}",
-        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (\"${app.name}\") ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and not ${journey.where-3}",
-        "type": "SINGLE_VALUE",
-        "timeFrameShift": "dynamic"
-    }, {
-        "name": "DTAQL",
-        "tileType": "DTAQL",
-        "configured": true,
-        "bounds": {
-            "top": 304,
-            "left": 836,
-            "width": 228,
-            "height": 152
-        },
-        "tileFilter": {},
-        "customName": "${journey.header-3}",
-        "query": "select count(usersessionid) as \"Abandons\" from usersession where useraction.application in (\"${app.name}\") ${regionClause} ${uspClause} and ${journey.where-1} and ${journey.where-2} and ${journey.where-3} and not ${journey.where-4}",
-        "type": "SINGLE_VALUE",
-        "timeFrameShift": "dynamic"
+        "tileFilter": {}
     }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
@@ -325,9 +336,9 @@
         "configured": true,
         "bounds": {
             "top": 38,
-            "left": 380,
-            "width": 912,
-            "height": 266
+            "left": 152,
+            "width": 1216,
+            "height": 304
         },
         "tileFilter": {},
         "customName": "${UserJourneyName} User Journey",
