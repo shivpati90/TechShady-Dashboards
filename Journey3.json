@@ -196,7 +196,7 @@
         "tileType": "DTAQL",
         "configured": true,
         "bounds": {
-            "top": 304,
+            "top": 342,
             "left": 152,
             "width": 304,
             "height": 152
@@ -211,7 +211,7 @@
         "tileType": "DTAQL",
         "configured": true,
         "bounds": {
-            "top": 304,
+            "top": 342,
             "left": 456,
             "width": 304,
             "height": 152
@@ -226,7 +226,7 @@
         "tileType": "DTAQL",
         "configured": true,
         "bounds": {
-            "top": 304,
+            "top": 342,
             "left": 760,
             "width": 304,
             "height": 152
@@ -255,8 +255,8 @@
         "bounds": {
             "top": 38,
             "left": 152,
-            "width": 684,
-            "height": 266
+            "width": 912,
+            "height": 304
         },
         "tileFilter": {},
         "customName": "${UserJourneyName} User Journey",
