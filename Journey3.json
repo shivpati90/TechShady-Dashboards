@@ -5,7 +5,7 @@
     },
     "id": "65312f05-ca6c-4896-b2b4-1bc8ce3da734",
     "dashboardMetadata": {
-        "name": "${UserJourneyName} User Journey ",
+        "name": "${UserJourneyName} User Journey",
         "shared": true,
         "owner": "MyEmail",
         "sharingDetails": {
@@ -203,7 +203,7 @@
         "configured": true,
         "bounds": {
             "top": 342,
-            "left": 836,
+            "left": 760,
             "width": 304,
             "height": 152
         },
