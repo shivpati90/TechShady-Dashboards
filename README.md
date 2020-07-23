@@ -11,5 +11,4 @@ This dashboard pack provides a quick overview of your user journey with a focus 
 
 # Prerequisites Highlights
 
-1. Mark each user action step as a key user action for the user journey
-2. Create a session property for revenue (i.e. revenue - CSS selector)
+Mark each user action step as a key user action for the user journey.
