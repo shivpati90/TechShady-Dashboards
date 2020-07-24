@@ -5,7 +5,7 @@
     },
     "id": "4f08d265-a0a3-4bb9-93ee-c2f1221ddcd5",
     "dashboardMetadata": {
-        "name": "Application Executive Overview",
+        "name": "${overviewName} ${app.name} Executive Overview",
         "shared": false,
         "owner": "techshadyjk@ruxitlabs.com",
         "sharingDetails": {
@@ -15,7 +15,7 @@
         "dashboardFilter": {
             "timeframe": "l_24_HOURS"
         },
-        "tags": ["Executive", "Overview"]
+        "tags": ["${app.name}", "Executive", "Overview"]
     },
     "tiles": [{
         "name": "Custom chart",
@@ -41,6 +41,11 @@
                     "type": "LINE",
                     "entityType": "APPLICATION",
                     "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }, {
                         "id": "1",
                         "name": "Apdex category",
                         "values": ["FRUSTRATED", "SATISFIED", "TOLERATING"],
@@ -51,17 +56,17 @@
                     "aggregationRate": "TOTAL"
                 }],
                 "resultMetadata": {
-                    "null¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
-                        "lastModified": 1590762644615,
-                        "customColor": "#FF0000"
+                    "${app.id}¦APPLICATION»${app.id}»true¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1595617378208,
+                        "customColor": "#ffe11c"
                     },
-                    "null¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
-                        "lastModified": 1594476412752,
+                    "${app.id}¦APPLICATION»${app.id}»true¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1595617389786,
                         "customColor": "#39ff14"
                     },
-                    "null¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
-                        "lastModified": 1590768076794,
-                        "customColor": "#FFFF00"
+                    "${app.id}¦APPLICATION»${app.id}»true¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1595617389786,
+                        "customColor": "#FF1C1C"
                     }
                 }
             },
@@ -82,7 +87,29 @@
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## Apdex vs Revenue Over Time"
+        "markdown": "## Customer Satisfaction Over Time"
+    }, {
+        "name": "Customer Satisfaction",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Customer Satisfaction",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1368,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
     }, {
         "name": "Custom chart",
         "tileType": "CUSTOM_CHARTING",
@@ -107,6 +134,11 @@
                     "type": "AREA",
                     "entityType": "APPLICATION",
                     "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }, {
                         "id": "1",
                         "name": "Apdex category",
                         "values": ["FRUSTRATED", "SATISFIED", "TOLERATING"],
@@ -115,40 +147,21 @@
                     "sortAscending": false,
                     "sortColumn": true,
                     "aggregationRate": "TOTAL"
-                }, {
-                    "metric": "${Revenue.id}",
-                    "aggregation": "AVG",
-                    "type": "LINE",
-                    "entityType": "APPLICATION",
-                    "dimensions": [{
-                        "id": "0",
-                        "name": "dt.entity.application",
-                        "values": [],
-                        "entityDimension": true
-                    }],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
                 }],
                 "resultMetadata": {
-                    "${app.id}¦APPLICATION»${app.id}»true${Revenue.id}|AVG|TOTAL|LINE|APPLICATION|APPLICATION¿¿¿APPLICATIONɵtrue": {
-                        "lastModified": 1594757000005,
-                        "customColor": "#b19cd9"
+                    "${app.id}¦APPLICATION»${app.id}»true¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|AREA|APPLICATION": {
+                        "lastModified": 1595618976423,
+                        "customColor": "#FF1C1C"
                     },
-                    "null¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|AREA|APPLICATION|APPLICATION¿¿¿Apdex categoryɵfalse": {
-                        "lastModified": 1592430957704,
-                        "customColor": "#ffe11c"
-                    },
-                    "null¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|AREA|APPLICATION|APPLICATION¿¿¿Apdex categoryɵfalse": {
-                        "lastModified": 1594476440964,
+                    "${app.id}¦APPLICATION»${app.id}»true¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|AREA|APPLICATION": {
+                        "lastModified": 1595618951297,
                         "customColor": "#39ff14"
                     },
-                    "null¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|AREA|APPLICATION|APPLICATION¿¿¿Apdex categoryɵfalse": {
-                        "lastModified": 1592430947737,
-                        "customColor": "#FF1C1C"
+                    "${app.id}¦APPLICATION»${app.id}»true¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|AREA|APPLICATION": {
+                        "lastModified": 1595618965683,
+                        "customColor": "#ffe11c"
                     }
-                },
-                "leftAxisCustomUnit": "Count"
+                }
             },
             "filtersPerEntityType": {
                 "APPLICATION": {
@@ -157,18 +170,103 @@
             }
         }
     }, {
-        "name": "Apdex",
-        "tileType": "HEADER",
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
         "configured": true,
         "bounds": {
-            "top": 0,
-            "left": 0,
+            "top": 38,
+            "left": 342,
             "width": 304,
-            "height": 38
+            "height": 114
         },
-        "tileFilter": {}
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(*) as \" \" from usersession where useraction.application=\"${app.name}\"",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
     }, {
-        "name": "Revenue",
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 684,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(*) as \" \" from useraction where useraction.application=\"${app.name}\"",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": " ",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 1026,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(*) as \" \" from usersession where useraction.application=\"${app.name}\" and bounce is true",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 342,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(*) as \" \" from usersession where useraction.application=\"${app.name}\" and newuser is true",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 684,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(*) as \" \" from usersession where useraction.application=\"${app.name}\" and useraction.name=\"${kuaFirstStep}\" and useraction.name=\"${kuaLastStep}\"",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": " ",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 1026,
+            "width": 304,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(*) as \" \" from usersession where useraction.application=\"${app.name}\" and useraction.name=\"${kuaFirstStep}\" and not useraction.name=\"${kuaLastStep}\"",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "Total Sessions",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
@@ -179,18 +277,7 @@
         },
         "tileFilter": {}
     }, {
-        "name": "Application Health",
-        "tileType": "HEADER",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 1368,
-            "width": 304,
-            "height": 38
-        },
-        "tileFilter": {}
-    }, {
-        "name": "Avg Order Value",
+        "name": "New User Sessions",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
@@ -201,12 +288,23 @@
         },
         "tileFilter": {}
     }, {
-        "name": "Risk Revenue",
+        "name": "Requests",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
             "top": 0,
             "left": 684,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Bounces",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1026,
             "width": 304,
             "height": 38
         },
@@ -234,145 +332,17 @@
         },
         "tileFilter": {}
     }, {
-        "name": "Lost Revenue",
-        "tileType": "HEADER",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 1026,
-            "width": 304,
-            "height": 38
-        },
-        "tileFilter": {}
-    }, {
-        "name": "User Sessions Query",
-        "tileType": "DTAQL",
-        "configured": true,
-        "bounds": {
-            "top": 38,
-            "left": 342,
-            "width": 304,
-            "height": 114
-        },
-        "tileFilter": {},
-        "customName": " ",
-        "query": "select sum(${uspRevenue.id}) as \" \" from usersession where useraction.application=\"${app.name}\"  and (useraction.name=\"${kuaLastStep}\")",
-        "type": "SINGLE_VALUE",
-        "timeFrameShift": "dynamic",
-        "limit": 50
-    }, {
-        "name": "User Sessions Query",
-        "tileType": "DTAQL",
-        "configured": true,
-        "bounds": {
-            "top": 38,
-            "left": 684,
-            "width": 304,
-            "height": 114
-        },
-        "tileFilter": {},
-        "customName": " ",
-        "query": "select sum(${uspRevenue.id}) as \" \" from usersession where useraction.application=\"${app.name}\"  and (useraction.name=\"${kuaLastStep}\") and not (userExperienceScore=\"SATISFIED\")",
-        "type": "SINGLE_VALUE",
-        "timeFrameShift": "dynamic",
-        "limit": 50
-    }, {
-        "name": "User Sessions Query",
-        "tileType": "DTAQL",
-        "configured": true,
-        "bounds": {
-            "top": 38,
-            "left": 1026,
-            "width": 304,
-            "height": 114
-        },
-        "tileFilter": {},
-        "customName": " ",
-        "query": "select sum(${uspRevenue.id}) as \" \" from usersession where useraction.application=\"${app.name}\"  and not (useraction.name=\"${kuaLastStep}\")",
-        "type": "SINGLE_VALUE",
-        "timeFrameShift": "dynamic",
-        "limit": 50
-    }, {
-        "name": "User Sessions Query",
-        "tileType": "DTAQL",
-        "configured": true,
-        "bounds": {
-            "top": 190,
-            "left": 342,
-            "width": 304,
-            "height": 114
-        },
-        "tileFilter": {},
-        "customName": " ",
-        "query": "select avg(${uspRevenue.id}) as \" \" from usersession where useraction.application=\"${app.name}\"  and (useraction.name=\"${kuaLastStep}\")",
-        "type": "SINGLE_VALUE",
-        "timeFrameShift": "dynamic",
-        "limit": 50
-    }, {
-        "name": "User Sessions Query",
-        "tileType": "DTAQL",
-        "configured": true,
-        "bounds": {
-            "top": 190,
-            "left": 684,
-            "width": 304,
-            "height": 114
-        },
-        "tileFilter": {},
-        "customName": " ",
-        "query": "select count(usersessionid) as \" \" from usersession where useraction.application=\"${app.name}\"  and (useraction.name=\"${kuaLastStep}\") and (useraction.name=\"${kuaFirstStep}\")",
-        "type": "SINGLE_VALUE",
-        "timeFrameShift": "dynamic",
-        "limit": 50
-    }, {
-        "name": "User Sessions Query",
-        "tileType": "DTAQL",
-        "configured": true,
-        "bounds": {
-            "top": 190,
-            "left": 1026,
-            "width": 304,
-            "height": 114
-        },
-        "tileFilter": {},
-        "customName": " ",
-        "query": "select count(usersessionid) as \" \" from usersession where useraction.application=\"${app.name}\"  and not (useraction.name=\"${kuaLastStep}\") and (useraction.name=\"${kuaFirstStep}\")",
-        "type": "SINGLE_VALUE",
-        "timeFrameShift": "dynamic",
-        "limit": 50
-    }, {
-        "name": " ",
-        "tileType": "APPLICATIONS",
+        "name": "World map",
+        "tileType": "APPLICATION_WORLDMAP",
         "configured": true,
         "bounds": {
             "top": 38,
             "left": 1368,
             "width": 304,
-            "height": 114
+            "height": 266
         },
         "tileFilter": {},
-        "chartVisible": true
-    }, {
-        "name": "Problems",
-        "tileType": "OPEN_PROBLEMS",
-        "configured": true,
-        "bounds": {
-            "top": 190,
-            "left": 1368,
-            "width": 304,
-            "height": 114
-        },
-        "tileFilter": {}
-    }, {
-        "name": "Problems",
-        "tileType": "HEADER",
-        "configured": true,
-        "bounds": {
-            "top": 152,
-            "left": 1368,
-            "width": 304,
-            "height": 38
-        },
-        "tileFilter": {}
+        "assignedEntities": ["${app.id}"],
+        "metric": "APDEX"
     }]
 }
