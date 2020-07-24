@@ -228,7 +228,7 @@
         "timeFrameShift": "dynamic",
         "limit": 50
     }, {
-        "name": "Traffic",
+        "name": "Total Sessions",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
@@ -239,7 +239,7 @@
         },
         "tileFilter": {}
     }, {
-        "name": "New Users",
+        "name": "New User Sessions",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
@@ -250,7 +250,7 @@
         },
         "tileFilter": {}
     }, {
-        "name": "Requests",
+        "name": "User Actions",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
@@ -283,8 +283,8 @@
         },
         "tileFilter": {}
     }, {
-        "name": "Smartscape",
-        "tileType": "PURE_MODEL",
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
         "configured": true,
         "bounds": {
             "top": 38,
@@ -292,6 +292,32 @@
             "width": 304,
             "height": 266
         },
-        "tileFilter": {}
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": " ",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TOP_LIST",
+                "series": [{
+                    "metric": "builtin:apps.web.activeSessions",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
     }]
 }
