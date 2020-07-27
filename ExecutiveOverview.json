@@ -272,7 +272,7 @@
         },
         "tileFilter": {}
     }, {
-        "name": "Application Topology",
+        "name": "Active Sessions",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
