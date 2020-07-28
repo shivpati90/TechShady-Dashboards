@@ -5,7 +5,7 @@
     },
     "id": "6ecb0cef-8a21-4aa4-b8bd-761416bc981d",
     "dashboardMetadata": {
-        "name": "${OverviewName} User Journey Compare",
+        "name": "${MyString1} vs ${MyString2} User Journey Compare",
         "shared": false,
         "owner": "john.kelly@dynatrace.com",
         "sharingDetails": {
@@ -29,7 +29,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app1.name}\") ${regionClause1} ${uspClause1} and ${journey1.where-1} and not ${journey1.where-2}",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app.name}\") ${regionClause1} ${uspClause1} and ${journey.where-1} and not ${journey.where-2}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -44,7 +44,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app1.name}\") ${regionClause1} ${uspClause1} and ${journey1.where-1} and ${journey1.where-2} and not ${journey1.where-3}",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app.name}\") ${regionClause1} ${uspClause1} and ${journey.where-1} and ${journey.where-2} and not ${journey.where-3}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -59,7 +59,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app1.name}\") ${regionClause1} ${uspClause1} and ${journey1.where-1} and ${journey1.where-2} and ${journey1.where-3} and not ${journey1.where-4}",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app.name}\") ${regionClause1} ${uspClause1} and ${journey.where-1} and ${journey.where-2} and ${journey.where-3} and not ${journey.where-4}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -89,7 +89,7 @@
         },
         "tileFilter": {},
         "customName": "  ",
-        "query": "SELECT FUNNEL(${journey1.funnel}) FROM usersession where useraction.application in (\"${app1.name}\") ${regionClause1} ${uspClause1}",
+        "query": "SELECT FUNNEL(${journey.funnel}) FROM usersession where useraction.application in (\"${app.name}\") ${regionClause1} ${uspClause1}",
         "type": "FUNNEL",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -127,7 +127,7 @@
         },
         "tileFilter": {},
         "customName": "  ",
-        "query": "SELECT FUNNEL(${journey2.funnel}) FROM usersession where useraction.application in (\"${app2.name}\") ${regionClause2} ${uspClause2}",
+        "query": "SELECT FUNNEL(${journey.funnel}) FROM usersession where useraction.application in (\"${app.name}\") ${regionClause2} ${uspClause2}",
         "type": "FUNNEL",
         "timeFrameShift": "dynamic",
         "limit": 50
@@ -143,7 +143,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app2.name}\") ${regionClause2} ${uspClause2} and ${journey2.where-1} and not ${journey2.where-2}",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app.name}\") ${regionClause2} ${uspClause2} and ${journey.where-1} and not ${journey.where-2}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -158,7 +158,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app2.name}\") ${regionClause2} ${uspClause2} and ${journey2.where-1} and ${journey2.where-2} and not ${journey2.where-3}",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app.name}\") ${regionClause2} ${uspClause2} and ${journey.where-1} and ${journey.where-2} and not ${journey.where-3}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -173,7 +173,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app2.name}\") ${regionClause2} ${uspClause2} and ${journey2.where-1} and ${journey2.where-2} and ${journey2.where-3} and not ${journey2.where-4}",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app.name}\") ${regionClause2} ${uspClause2} and ${journey.where-1} and ${journey.where-2} and ${journey.where-3} and not ${journey.where-4}",
         "type": "SINGLE_VALUE",
         "timeFrameShift": "dynamic"
     }, {
@@ -247,7 +247,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select userExperienceScore,count(*) as \" \" from usersession where useraction.application in (\"${app1.name}\") ${regionClause1} ${uspClause1} and ${journey1.where-1} group by userExperienceScore order by count(*) DESC",
+        "query": "select userExperienceScore,count(*) as \" \" from usersession where useraction.application in (\"${app.name}\") ${regionClause1} ${uspClause1} and ${journey.where-1} group by userExperienceScore order by count(*) DESC",
         "type": "PIE_CHART",
         "limit": 50
     }, {
@@ -262,7 +262,7 @@
         },
         "tileFilter": {},
         "customName": " ",
-        "query": "select userExperienceScore,count(*) as \" \" from usersession where useraction.application in (\"${app2.name}\") ${regionClause2} ${uspClause2} and ${journey2.where-1} group by userExperienceScore order by count(*) DESC",
+        "query": "select userExperienceScore,count(*) as \" \" from usersession where useraction.application in (\"${app.name}\") ${regionClause2} ${uspClause2} and ${journey.where-1} group by userExperienceScore order by count(*) DESC",
         "type": "PIE_CHART",
         "limit": 50
     }, {
