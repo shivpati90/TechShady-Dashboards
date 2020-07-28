@@ -77,7 +77,7 @@
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [Satisfied Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22SATISFIED%22%20%20%20and%20(useraction.name%3D%22${journey.where-last})%20%0A&visualization=TABLE)"
+        "markdown": "## [Satisfied Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22SATISFIED%22%20%20%20and%20${journey.where-last})%20%0A&visualization=TABLE)"
     }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
@@ -199,11 +199,11 @@
                     "aggregationRate": "TOTAL"
                 }],
                 "resultMetadata": {
-                    "null¦APPLICATION_METHOD»${method.id}»truebuiltin:apps.web.action.count.load.browser|NONE|TOTAL|AREA|APPLICATION_METHOD": {
+                    "${method.id}¦APPLICATION_METHOD»${method.id}»truebuiltin:apps.web.action.count.load.browser|NONE|TOTAL|AREA|APPLICATION_METHOD": {
                         "lastModified": 1595003041958,
                         "customColor": "#39ff14"
                     },
-                    "null¦APPLICATION_METHOD»${method.id}»truebuiltin:apps.web.action.count.xhr.browser|NONE|TOTAL|AREA|APPLICATION_METHOD": {
+                    "${method.id}¦APPLICATION_METHOD»${method.id}»truebuiltin:apps.web.action.count.xhr.browser|NONE|TOTAL|AREA|APPLICATION_METHOD": {
                         "lastModified": 1594998887772,
                         "customColor": "#39ff14"
                     }
