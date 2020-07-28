@@ -1,0 +1,291 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.196.71.20200702-184254"
+    },
+    "id": "6ecb0cef-8a21-4aa4-b8bd-761416bc981d",
+    "dashboardMetadata": {
+        "name": "User Journey Compare",
+        "shared": false,
+        "owner": "john.kelly@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": "l_24_HOURS"
+        },
+        "tags": ["User Journey", "Configurator","Compare"]
+    },
+    "tiles": [{
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 152,
+            "width": 266,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app1.name}\") ${regionClause1} ${uspClause1} and ${journey1.where-1} and not ${journey1.where-2}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 418,
+            "width": 266,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app1.name}\") ${regionClause1} ${uspClause1} and ${journey1.where-1} and ${journey1.where-2} and not ${journey1.where-3}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 684,
+            "width": 266,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app1.name}\") ${regionClause1} ${uspClause1} and ${journey1.where-1} and ${journey1.where-2} and ${journey1.where-3} and not ${journey1.where-4}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 950,
+            "width": 266,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select 0 as \" \" from usersession limit 1",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 152,
+            "width": 1064,
+            "height": 228
+        },
+        "tileFilter": {},
+        "customName": "  ",
+        "query": "SELECT FUNNEL(${journey1.funnel}) FROM usersession where useraction.application in (\"${app1.name}\") ${regionClause1} ${uspClause1}",
+        "type": "FUNNEL",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "${MyString1} Book Travel",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 152,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "${MyString2} Book Travel",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 152,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 152,
+            "width": 1064,
+            "height": 228
+        },
+        "tileFilter": {},
+        "customName": "  ",
+        "query": "SELECT FUNNEL(${journey2.funnel}) FROM usersession where useraction.application in (\"${app2.name}\") ${regionClause2} ${uspClause2}",
+        "type": "FUNNEL",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 684,
+            "left": 152,
+            "width": 266,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app2.name}\") ${regionClause2} ${uspClause2} and ${journey2.where-1} and not ${journey2.where-2}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 684,
+            "left": 418,
+            "width": 266,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app2.name}\") ${regionClause2} ${uspClause2} and ${journey2.where-1} and ${journey2.where-2} and not ${journey2.where-3}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 684,
+            "left": 684,
+            "width": 266,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select count(usersessionid) as \" \" from usersession where useraction.application in (\"${app2.name}\") ${regionClause2} ${uspClause2} and ${journey2.where-1} and ${journey2.where-2} and ${journey2.where-3} and not ${journey2.where-4}",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "DTAQL",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 684,
+            "left": 950,
+            "width": 266,
+            "height": 114
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select 0 as \" \" from usersession limit 1",
+        "type": "SINGLE_VALUE",
+        "timeFrameShift": "dynamic"
+    }, {
+        "name": "Sessions",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Sessions",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 532,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Abandons",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Abandons",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 722,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 1254,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select userExperienceScore,count(*) as \" \" from usersession where useraction.application in (\"${app1.name}\") ${regionClause1} ${uspClause1} and ${journey1.where-1} group by userExperienceScore order by count(*) DESC",
+        "type": "PIE_CHART",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 1254,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {},
+        "customName": " ",
+        "query": "select userExperienceScore,count(*) as \" \" from usersession where useraction.application in (\"${app2.name}\") ${regionClause2} ${uspClause2} and ${journey2.where-1} group by userExperienceScore order by count(*) DESC",
+        "type": "PIE_CHART",
+        "limit": 50
+    }, {
+        "name": "${MyString1} User Experience Score",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1254,
+            "width": 380,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "${MyString2} User Experience Score",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 1254,
+            "width": 380,
+            "height": 38
+        },
+        "tileFilter": {}
+    }]
+}
