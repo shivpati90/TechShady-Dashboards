@@ -5,7 +5,7 @@
     },
     "id": "6ecb0cef-8a21-4aa4-b8bd-761416bc981d",
     "dashboardMetadata": {
-        "name": "User Journey Compare",
+        "name": "${OverviewName} User Journey Compare",
         "shared": false,
         "owner": "john.kelly@dynatrace.com",
         "sharingDetails": {
