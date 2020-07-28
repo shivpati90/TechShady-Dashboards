@@ -77,7 +77,7 @@
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [Satisfied Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22SATISFIED%22%20%20%20and%20${journey.where-last})%20%0A&visualization=TABLE)"
+        "markdown": "## [Satisfied Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22SATISFIED%22%20and%20${journey.where-last}%20%0A&visualization=TABLE)"
     }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
@@ -89,7 +89,7 @@
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [Tolerated Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22TOLERATED%22%20%20and%20(useraction.name%3D%22${journey.where-last})%20%0A&visualization=TABLE)"
+        "markdown": "## [Tolerated Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22TOLERATED%22%20and%20${journey.where-last}%20%0A&visualization=TABLE)"
     }, {
         "name": "Markdown",
         "tileType": "MARKDOWN",
@@ -101,7 +101,7 @@
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [Frustrated Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22FRUSTRATED%22%20%20and%20(useraction.name%3D%22${journey.where-last})%20%0A&visualization=TABLE)"
+        "markdown": "## [Frustrated Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09userExperienceScore%3D%22FRUSTRATED%22%20and%20${journey.where-last}%20%0A&visualization=TABLE)"
     }, {
         "name": "Conversions Over Time",
         "tileType": "HEADER",
@@ -150,7 +150,7 @@
             "height": 38
         },
         "tileFilter": {},
-        "markdown": "## [Overall Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%0A%09(useraction.name%3D%22${journey.where-last})%20%20%0A&visualization=TABLE)"
+        "markdown": "## [Overall Conversions](${url}/ui/user-sessions/query?sessionquery=select%20userId%20as%20%22User%22%20FROM%20usersession%20where%20${journey.where-last}%20%0A&visualization=TABLE)"
     }, {
         "name": "Custom chart",
         "tileType": "CUSTOM_CHARTING",
